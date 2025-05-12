@@ -1,0 +1,14 @@
+// Share Buttons - Mobile.
+
+// Fixes an Elementor bug where for Safari the aligment gets messed up for mobile, due to a nonsensical CSS rule.
+// TODO: This is supposed to be fixed by Elementor in some v3 release. Check if we still need it.
+.elementor-widget-share-buttons {
+	.e--ua-appleWebkit &.elementor-grid-0 {
+		&.elementor-share-buttons--align-right,
+		&.elementor-share-buttons--align-justify {
+			.elementor-widget-container .elementor-grid {
+				display: inline-block;
+			}
+		}
+	}
+}

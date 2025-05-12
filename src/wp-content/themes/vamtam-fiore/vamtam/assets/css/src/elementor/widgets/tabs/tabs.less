@@ -1,0 +1,136 @@
+// Tabs.
+.elementor-widget-tabs {
+	// Base Theme Widget Styles.
+    &.vamtam-has-theme-widget-styles {
+        .elementor-tabs-wrapper {
+            padding: inherit;
+        }
+
+        .elementor-tab-desktop-title {
+            padding: 20px 25px;
+        }
+
+        .elementor-tab-title {
+            padding: 20px;
+            border-style: solid;
+            border-width: 2px !important;
+            border-color: var(--vamtam-accent-color-2);
+            border-radius: 30px;
+            text-align: center;
+            margin: 15px 0px;
+
+            >a {
+                display: block;
+                &:hover {
+                    border-color: var(--vamtam-accent-color-1);
+                }
+            }
+        }
+
+        .elementor-tabs-wrapper {
+            .elementor-tab-title {
+                padding: 15px 40px;
+                margin: 0 10px;
+            }
+        }
+
+        .elementor-tab-title.elementor-active {
+            background: var(--vamtam-accent-color-1);
+            border-color: var(--vamtam-accent-color-1);
+        }
+
+        .elementor-tab-content {
+            padding: 2em;
+        }
+
+		&.vamtam-has-underline-anim {
+			.elementor-tabs-wrapper {
+				.elementor-tab-title {
+					position: relative;
+					@underline_width: var(--vamtam-underline-width, 1px);
+					border-bottom: @underline_width solid transparent !important;
+
+					@keyframes vamtam-underline-anim-left {
+						0% {
+							transform: scaleX(0);
+						}
+
+						100% {
+							transform: scale(1);
+						}
+					}
+
+					@keyframes vamtam-underline-anim-right {
+						0% {
+							transform: scaleX(.8);
+						}
+
+						100% {
+							transform: scaleX(0);
+						}
+					}
+
+					&::after,
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						width: 100%;
+						top: 100%;
+						height: @underline_width;
+						background: var(--vamtam-underline-bg-color, currentColor);
+						will-change: transform;
+					}
+					&::before {
+						transform-origin: left;
+					}
+					&::after {
+						transform: scaleX(0);
+						transform-origin: right;
+					}
+
+					&.elementor-active {
+						&::after,
+						&::before {
+							left: 0;
+							right: 0;
+							background: var(--vamtam-active-underline-bg-color, currentColor);
+						}
+					}
+
+					// This class is added from the JS hadler of the widget (handleBtnUnderlineAnimation() function).
+					&.hovered {
+						@anim-time: .5s; // If changed, please update the timeout timer value in the JS handler as well (handleBtnUnderlineAnimation() function).
+						&::before {
+							animation: vamtam-underline-anim-left calc(@anim-time + 0.15s) ease forwards;
+						}
+
+						&::after {
+							animation: vamtam-underline-anim-right @anim-time ease forwards;
+						}
+					}
+				}
+			}
+		}
+
+		&.vamtam-tabs {
+			.elementor-tab-title {
+				padding: 0;
+				margin: 0 25px;
+				border: none;
+			}
+			.elementor-tabs-wrapper {
+				.elementor-tab-title {
+					background: transparent;
+					padding: 0px 0px 1px 0px;
+					margin: 0 25px;
+					transition: all .3s;
+				}
+			}
+			.elementor-tab-title.elementor-active {
+				background: transparent;
+			}
+		}
+
+    }
+}

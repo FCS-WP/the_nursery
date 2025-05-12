@@ -1,0 +1,30 @@
+// Nav menu - Desktop.
+.elementor-widget-nav-menu {
+	// Base theme widget styles.
+	&.vamtam-has-theme-widget-styles {
+
+		&.vamtam-menu-decoration {
+			.elementor-nav-menu--dropdown {
+				a {
+					display: inline-block;
+					text-decoration: underline solid transparent;
+					text-decoration-thickness: 1px;
+					text-underline-offset: 3px;
+					body.e--ua-safari & {
+						// One pixel discrepancy on Safari.
+						text-underline-offset: 4px;
+					}
+
+					&:hover {
+						text-decoration-color: currentColor;
+					}
+				}
+
+			}
+		}
+
+		&.vamtam-menu-indicator .sub-arrow {
+			display: none;
+		}
+	}
+}

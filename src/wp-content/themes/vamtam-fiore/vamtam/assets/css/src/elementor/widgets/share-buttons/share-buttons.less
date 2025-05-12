@@ -1,0 +1,17 @@
+// Share Buttons.
+.elementor-widget-share-buttons {
+	// Base Theme Widget Styles.
+	&.vamtam-has-theme-widget-styles {
+		&.elementor-share-buttons--color-custom.elementor-share-buttons--skin-framed {
+			.elementor-share-btn__icon {
+				i, svg {
+					transition: all .3s ease;
+					color: var(--e-share-buttons-secondary-color, inherit);
+				}
+				svg {
+					fill: var(--e-share-buttons-secondary-color, inherit);
+				}
+			}
+		}
+	}
+}

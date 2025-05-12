@@ -1,0 +1,126 @@
+@import '../woosw/woosw.less';
+
+.elementor-widget-woocommerce-my-account {
+	// Base theme widget styles.
+	&.vamtam-has-theme-widget-styles {
+		.woocommerce {
+			.order_details {
+				tfoot {
+					td {
+						padding-top: 20px;
+						padding-bottom: 20px;
+					}
+					th {
+						padding-top: 20px;
+						padding-bottom: 20px;
+					}
+				}
+			}
+
+			:is(.woocommerce-message, .woocommerce-Message) {
+				// This is to negate a frontend.css rule that sets the bg-color of wc info buttons to 'initial' for the my-account widget.
+				a.button {
+					&, &.alt {
+						&:hover {
+							background-color: var(--vamtam-info-buttons-hover-bg-color);
+						}
+					}
+				}
+			}
+		}
+
+		.lost_reset_password {
+			margin: 0 auto;
+		}
+
+		.e-my-account-tab__payment-methods .woocommerce-info {
+			margin-bottom: 10px;
+		}
+
+		.e-my-account-tab:not(.e-my-account-tab__dashboard--custom) .woocommerce .woocommerce-ResetPassword .form-row-last {
+			width: 100%;
+		}
+
+		.login .button,
+		.register .button {
+			width: 100%;
+		}
+
+		.woocommerce-orders-table {
+			.woocommerce-orders-table__cell-order-actions {
+				.woocommerce-button.button.view {
+					padding: var(--tables-button-padding, 5px 10px);
+				}
+			}
+		}
+
+		.woocommerce-info {
+			.button {
+				font-size: 85.5%;
+			}
+		}
+
+		.no_subscriptions.woocommerce-message.woocommerce-message--info.woocommerce-Message.woocommerce-Message--info.woocommerce-info {
+			.woocommerce-Button.button {
+				font-size: 85.5%;
+			}
+		}
+
+		form {
+			.form-row {
+				.required {
+					color: inherit;
+				}
+			}
+
+			.show-password-input {
+				top: 30%;
+
+				&::after {
+					content: "\f070";
+					font-family: "Font Awesome 5 Free";
+				}
+			}
+		}
+
+		@media(min-width: 768px) {
+			.woocommerce-MyAccount-navigation ul li {
+				display: inline-flex !important;
+
+				a {
+					text-align: center;
+					flex-grow: 1;
+				}
+			}
+		}
+
+		.woocommerce {
+			thead .woocommerce-table__product-table.product-total,
+			tbody td.woocommerce-table__product-total.product-total,
+			tfoot td {
+				text-align: end;
+			}
+
+			.woocommerce-LostPassword.lost_password {
+				font-family: var( --e-global-typography-75063c5-font-family), Sans-serif;
+				font-size: var( --e-global-typography-75063c5-font-size);
+				line-height: var( --e-global-typography-75063c5-line-height);
+				letter-spacing: var( --e-global-typography-75063c5-letter-spacing);
+				word-spacing: var( --e-global-typography-75063c5-word-spacing);
+				text-align: center;
+			}
+		}
+
+		.woocommerce-order {
+			.woocommerce-table.woocommerce-table--order-details.shop_table.order_details {
+				th.woocommerce-table__product-table.product-total,
+				td.woocommerce-table__product-total.product-total,
+				tfoot td {
+					text-align: end;
+				}
+			}
+		}
+
+		.woosw();
+	}
+}

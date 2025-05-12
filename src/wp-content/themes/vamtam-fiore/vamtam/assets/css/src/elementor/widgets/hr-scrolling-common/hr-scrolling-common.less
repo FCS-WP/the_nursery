@@ -1,0 +1,126 @@
+.elementor-widget.vamtam-has-theme-widget-styles {
+	&.vamtam-has-hr-layout {
+		:is( ul.products, .elementor-posts-container ) {
+			--scroller-padding: 20px;
+			--col-size: calc((100% / var(--vamtam-cols)) - var(--vamtam-col-gap, var(--grid-column-gap)) - var(--vamtam-col-hint));
+			grid-auto-flow: column;
+			grid-template-columns: var(--col-size);
+			grid-auto-columns: var(--col-size);
+			overflow-x: auto;
+			overflow-y: hidden;
+			padding-bottom: var(--scroller-padding);
+			scroll-behavior: smooth;
+
+			// Chrome\Edge fix
+			:is(.e--ua-chrome, .e--ua-edge) & {
+				width: calc(100% + 2px); // Issue: https://github.com/veniko/petopia/issues/15#issuecomment-1239360647
+			}
+		}
+
+		&.vamtam-has-nav {
+			user-select: none;
+
+			.vamtam-nav {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				pointer-events: none;
+				opacity: 0;
+				transition: opacity .7s ease;
+			}
+
+			.vamtam-nav-btn {
+				cursor: pointer;
+				pointer-events: all;
+				position: absolute;
+				display: inline-block;
+				height: 50px;
+				width: 50px;
+				top: 50%;
+				transform: translateY(-50%);
+				background-color: var(--vamtam-accent-color-3);
+				border-radius: 100%;
+				opacity: 1;
+				transition: opacity .15s ease;
+
+				display: flex;
+				flex-flow: column nowrap;
+				align-content: center;
+				justify-content: center;
+
+				&.vamtam-nav-btn-prev {
+					left: -25px;
+
+					.vamtam-theme-arrow-left {
+						&::before {
+							content: "\e918";
+						}
+					}
+				}
+
+				&.vamtam-nav-btn-next {
+					right: -25px;
+
+					.vamtam-theme-arrow-right {
+						&::before {
+							content: "\e919";
+						}
+					}
+				}
+
+				i {
+					pointer-events: none;
+					text-align: center;
+					font-size: 20px;
+					font-weight: normal;
+				}
+			}
+
+			&:hover {
+				.vamtam-nav {
+					opacity: 1;
+				}
+
+				.vamtam-nav-btn {
+					opacity: 1;
+
+					&.disabled {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		// Touch devices (and others with reduced pointer accuracy).
+		@media (pointer:coarse) {
+
+			// We hide the scrollbar on touch devices.
+			:is( ul.products, .elementor-posts-container ) {
+				body:not(.e--ua-safari) & { // iOS renders it anyway so we keep the padding there.
+					--scroller-padding: 0px;
+				}
+
+				// FF - Scrollbar.
+				.e--ua-firefox & {
+					scrollbar-width: none;
+				}
+
+				// Webkit - Scrollbar.
+				.e--ua-webkit & {
+					&::-webkit-scrollbar {
+						width: 0;
+					}
+				}
+			}
+
+			// No navigation on touch devices. They can scroll by touch & drag.
+			&.vamtam-has-nav {
+				.vamtam-nav {
+					display: none;
+				}
+			}
+		}
+	}
+}

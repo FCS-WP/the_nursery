@@ -1,0 +1,32 @@
+// Product Images.
+.elementor-widget-woocommerce-product-images.vamtam-has-theme-widget-styles {
+	.woocommerce-product-gallery {
+		flex-direction: column;
+	}
+
+	div.images {
+		height: auto !important;
+
+		.flex-control-thumbs {
+			flex-direction: row;
+			max-width: none;
+			min-height: 100px;
+
+			.woocommerce & {
+				overflow-x: auto;
+				overflow-y: hidden;
+				margin-top: 10px;
+				margin-right: 0;
+			}
+
+			li {
+				min-width: 100px;
+				width: 100px !important;
+			}
+		}
+
+		:is( .vamtam-product-gallery-thumbs-prev, .vamtam-product-gallery-thumbs-next ) {
+			display: none;
+		}
+	}
+}

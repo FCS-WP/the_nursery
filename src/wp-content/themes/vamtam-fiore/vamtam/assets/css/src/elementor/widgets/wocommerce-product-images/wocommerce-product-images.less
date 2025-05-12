@@ -1,0 +1,110 @@
+// Product Images.
+.elementor-widget-woocommerce-product-images {
+	// Base Theme Widget Styles.
+	&.vamtam-has-theme-widget-styles {
+		&.vamtam-has-full-sized-gallery:not(.vamtam-mobile-gallery) {
+			.woocommerce-product-gallery__wrapper,
+			.woocommerce-product-gallery--vamtam__wrapper {
+				display: grid;
+				grid-template-columns: 1fr;
+				justify-content: center;
+				align-items: center;
+
+				.woocommerce-product-gallery__image,
+				.woocommerce-product-gallery--vamtam__image {
+					width: 100% !important;
+				}
+			}
+		}
+
+		.woocommerce-product-gallery {
+			&.vamtam-hide {
+				opacity: 0 !important;
+			}
+
+			.woocommerce-product-gallery__image > a:not([href]) {
+				pointer-events: none;
+			}
+		}
+
+		&.elementor-element > .elementor-widget-container div.images {
+			margin-bottom: 0;
+		}
+
+		span.onsale {
+			top: 0;
+			background-color: var(--vamtam-accent-color-1);
+		}
+
+		.woocommerce-product-gallery {
+			display: flex;
+			flex-direction: row-reverse;
+
+			&.vamtam-hide {
+				opacity: 0 !important;
+			}
+
+			>:is(.flex-viewport, .flex-control-thumbs, .woocommerce-product-gallery__wrapper) {
+				flex: 1;
+			}
+		}
+
+		div.images {
+			.flex-control-thumbs {
+				display: flex;
+				flex-direction: column;
+				max-width: 100px;
+				gap: 10px;
+
+				.woocommerce & {
+					margin-right: 10px;
+				}
+
+				.woocommerce div.product & li {
+					width: 100%;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		// New badge.
+		.vamtam-new {
+			display: none;
+			position: absolute;
+			text-align: center;
+			font-family: "Montserrat", Sans-serif;
+			font-size: 10px;
+			font-weight: normal;
+			line-height: 26px;
+			border-radius: 6px;
+			min-width: 52px;
+			min-height: 26px;
+			right: auto;
+			margin: 10px;
+			left: 0;
+			top: 0;
+			background-color: var(--vamtam-accent-color-6);
+			color: var(--vamtam-accent-color-5);
+			z-index: 9;
+		}
+		&.vamtam-has-onsale-yes {
+			:where(.vamtam-new) {
+				&.vamtam-onsale {
+					top: 31px;
+				}
+			}
+		}
+		&:is(.vamtam-has-onsale-yes, .vamtam-has-new-badge) {
+			.woocommerce-product-gallery__wrapper {
+				position: relative;
+			}
+		}
+
+		:is( span.onsale, .vamtam-new ) {
+			left: 0;
+		}
+	}
+}

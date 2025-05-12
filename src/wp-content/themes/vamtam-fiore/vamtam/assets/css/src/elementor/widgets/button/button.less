@@ -1,0 +1,188 @@
+// Button.
+.elementor-widget-button {
+	// Base Theme Widget Styles.
+	&.vamtam-has-theme-widget-styles {
+		&.vamtam-has-underline-anim {
+			.elementor-button {
+				.elementor-button-text {
+					position: relative;
+
+					@keyframes vamtam-underline-anim-left {
+						0% {
+							transform: scaleX(0);
+						}
+
+						100% {
+							transform: scale(1);
+						}
+					}
+
+					@keyframes vamtam-underline-anim-right {
+						0% {
+							transform: scaleX(.8);
+						}
+
+						100% {
+							transform: scaleX(0);
+						}
+					}
+
+					&::after,
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						width: 100%;
+						top: 100%;
+						margin-top: 2px;
+						height: var(--vamtam-underline-width, 1px);
+						background: var(--vamtam-underline-bg-color, currentColor);
+						will-change: transform;
+					}
+					&::before {
+						transform-origin: left;
+					}
+					&::after {
+						transform: scaleX(0);
+						transform-origin: right;
+					}
+				}
+				// This class is added from the JS hadler of the widget (handleBtnUnderlineAnimation() function).
+				&.hovered {
+					.elementor-button-text {
+						@anim-time: .5s; // If changed, please update the timeout timer value in the JS handler as well (handleBtnUnderlineAnimation() function).
+						&::before {
+							animation: vamtam-underline-anim-left calc(@anim-time + 0.15s) ease forwards;
+						}
+
+						&::after {
+							animation: vamtam-underline-anim-right @anim-time ease forwards;
+						}
+					}
+				}
+			}
+		}
+
+		&.elementor-button-fiore {
+			.elementor-button {
+				border: 0;
+				align-items: flex-start;
+				background-color: transparent;
+				line-height: 1;
+
+				&, .vamtam-content-wrap, .vamtam-text-first-letter, .elementor-button-icon {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+				}
+
+				.vamtam-content-wrap,
+				.elementor-button-icon {
+					position: relative;
+					align-items: center;
+				}
+
+				.elementor-button-text,
+				.elementor-button-icon > * {
+					position: relative;
+				}
+
+				.vamtam-text-first-letter {
+					font-size: 16em;
+					font-weight: normal;
+
+					> .vamtam-letter {
+						position: relative;
+						display: inline-block;
+						overflow: hidden;
+						.outer {
+							position: absolute;
+							overflow: hidden;
+							top: 0;
+							left: 0;
+							transition: transform 1s ease;
+							transform: translateY(100%);
+						}
+						.inner {
+							display: inline-block;
+							transition: transform 1s ease;
+							transform: translateY(-100%);
+						}
+					}
+				}
+				&:hover {
+					.vamtam-text-first-letter {
+						> .vamtam-letter {
+							.outer, .inner {
+								transform: none;
+							}
+						}
+					}
+				}
+
+				.elementor-button-content-wrapper {
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					.elementor-button-text {
+						display: flex;
+						flex-flow: column wrap;
+						justify-content: center;
+						align-items: center;
+					}
+				}
+			}
+
+			&.elementor-align-{
+				&right {
+					.elementor-button-wrapper.has-icon{
+						justify-content: flex-end;
+					}
+					.elementor-button {
+						align-items: flex-end;
+					}
+				}
+				&left {
+					.elementor-button-wrapper.has-icon{
+						justify-content: flex-start;
+					}
+					.elementor-button {
+						align-items: flex-start;
+					}
+				}
+				&center {
+					.elementor-button-wrapper.has-icon{
+						justify-content: center;
+					}
+					.elementor-button {
+						align-items: center;
+					}
+				}
+			}
+
+			.elementor-button-text {
+				line-height: normal;
+			}
+
+			.elementor-button-wrapper.has-icon {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			&.vamtam-has-icon-stacked {
+				.elementor-button-wrapper.has-icon .elementor-button-content-wrapper {
+					flex-direction: column;
+				}
+			}
+
+			&.vamtam-has-force-wrap {
+				.elementor-button-text {
+					word-spacing: 99999px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,149 @@
+// Advanced AJAX Product Filters for WooCommerce by BeRocket.
+.elementor-widget-wp-widget-berocket_aapf_group {
+	// Base Theme Widget Styles.
+	&.vamtam-has-theme-widget-styles {
+		&.vamtam-products-filter {
+			.bapf_button.bapf_reset {
+				font-family: var( --e-global-typography-75063c5-font-family), Sans-serif;
+				font-size: var( --e-global-typography-75063c5-font-size);
+				line-height: var( --e-global-typography-75063c5-line-height);
+				letter-spacing: var( --e-global-typography-75063c5-letter-spacing);
+				word-spacing: var( --e-global-typography-75063c5-word-spacing);
+				text-transform: var( --e-global-typography-75063c5-text-transform);
+				font-weight: var( --e-global-typography-75063c5-font-weight);
+				padding: 0;
+				border: none;
+				background: transparent;
+				text-decoration: underline;
+				color: var(--vamtam-accent-color-1);
+			}
+			.bapf_sfilter {
+				padding-bottom: 20px;
+				border-bottom: 1px solid var( --e-global-color-vamtam_accent_7);
+				.bapf_body {
+					.bapf_slidr_all {
+						direction: ltr;
+					}
+
+					ul {
+						li {
+							ul {
+								margin: 10px 0px 20px 6px;
+							}
+							&:last-of-type {
+								ul {
+									margin-bottom: 0;
+								}
+							}
+						}
+					}
+				}
+				ul {
+					li {
+						margin-bottom: 10px !important;
+						&:last-of-type {
+							margin-bottom: 0 !important;
+						}
+					}
+				}
+				.bapf_colaps_smb {
+					font-size: 12px;
+				}
+				.bapf_desci {
+					font-size: 12px;
+				}
+			}
+			.berocket_single_filter_widget {
+				&:last-child {
+					.bapf_sfilter {
+						padding-bottom: 0;
+						border-bottom: none;
+					}
+				}
+				.bapf_sfilter {
+					.bapf_body {
+						ul {
+							padding-inline-start: 0;
+						}
+					}
+				}
+			}
+			h3 {
+				font-family: var( --e-global-typography-vamtam_h6-font-family), Sans-serif;
+				font-size: var( --e-global-typography-vamtam_h6-font-size);
+				font-weight: var( --e-global-typography-vamtam_h6-font-weight);
+				text-transform: var( --e-global-typography-vamtam_h6-text-transform);
+				line-height: var( --e-global-typography-vamtam_h6-line-height);
+				letter-spacing: var( --e-global-typography-vamtam_h6-letter-spacing);
+				margin-bottom: 0;
+			}
+			.bapf_body {
+				label {
+					font-family: var( --e-global-typography-75063c5-font-family), Sans-serif;
+					font-size: var( --e-global-typography-75063c5-font-size);
+					line-height: var( --e-global-typography-75063c5-line-height);
+					letter-spacing: var( --e-global-typography-75063c5-letter-spacing);
+					word-spacing: var( --e-global-typography-75063c5-word-spacing);
+					text-transform: var( --e-global-typography-75063c5-text-transform);
+					font-weight: var( --e-global-typography-75063c5-font-weight);
+				}
+				padding-top: 10px;
+			}
+			.bapf_slidr_main.ui-widget-content {
+				.ui-slider-range {
+					background-color: var( --vamtam-accent-color-1);
+				}
+				background: var( --e-global-color-vamtam_accent_7);
+				margin-left: 8px;
+				.ui-slider-handle {
+					top: -4px;
+					border-radius: 0;
+					background: var( --e-global-color-vamtam_accent_1);
+					width: 12px;
+					height: 12px;
+					border: 1px solid white !important;
+				}
+			}
+			.berocket_filter_price_slider.ui-widget-content {
+				.ui-slider-range {
+					background-color: var( --vamtam-accent-color-1);
+				}
+				background: var( --e-global-color-vamtam_accent_7);
+				margin-left: 8px;
+			}
+			.bapf_slidr_all {
+				.bapf_from {
+					text-align: end;
+					font-family: var( --e-global-typography-75063c5-font-family), Sans-serif;
+					font-size: var( --e-global-typography-75063c5-font-size);
+					line-height: var( --e-global-typography-75063c5-line-height);
+					letter-spacing: var( --e-global-typography-75063c5-letter-spacing);
+					word-spacing: var( --e-global-typography-75063c5-word-spacing);
+					text-transform: var( --e-global-typography-75063c5-text-transform);
+					font-weight: var( --e-global-typography-75063c5-font-weight);
+					color: var(--vamtam-accent-color-4) !important;
+					margin-bottom: 0;
+				}
+				.bapf_to {
+					&::before {
+						content: "-";
+					}
+				}
+			}
+			.bapf_slidr_jqrui {
+				.bapf_to {
+					text-align: start;
+					font-family: var( --e-global-typography-75063c5-font-family), Sans-serif;
+					font-size: var( --e-global-typography-75063c5-font-size);
+					line-height: var( --e-global-typography-75063c5-line-height);
+					letter-spacing: var( --e-global-typography-75063c5-letter-spacing);
+					word-spacing: var( --e-global-typography-75063c5-word-spacing);
+					text-transform: var( --e-global-typography-75063c5-text-transform);
+					font-weight: var( --e-global-typography-75063c5-font-weight);
+					color: var(--vamtam-accent-color-4) !important;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

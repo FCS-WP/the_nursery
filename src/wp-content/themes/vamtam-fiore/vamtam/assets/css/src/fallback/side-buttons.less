@@ -1,0 +1,40 @@
+#scroll-to-top {
+	position: fixed;
+	z-index: 200;
+	opacity: 0;
+	bottom: 60px;
+	right: 20px;
+	width: 60px;
+	height: 60px;
+	font-size: 2em;
+	line-height: 24px;
+	margin-left: 0px;
+	border: none;
+	text-shadow: none;
+	transition: opacity .3s ease-out, color .3s ease-out, transform .3s ease-out;
+	backface-visibility: hidden;
+	transform: scale3d( 0, 0, 0 );
+	text-align: center;
+	cursor: pointer;
+	background: var( --vamtam-accent-color-6-hc );
+	border-radius: 9999px;
+
+	svg {
+		pointer-events: none;
+		width: 16px;
+    	height: auto;
+	}
+
+	&:hover {
+		color: var(--vamtam-accent-color-1);
+		transform: translateY(-8px) !important;
+	}
+}
+
+#scroll-to-top-text {
+	font-family: var(--vamtam-h1-font-family);
+	color: var(--vamtam-accent-color-6);
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+}

@@ -1,0 +1,42 @@
+// Products / Archive Products / Product Related / Upsells - Tablet.
+
+// Theme-dependant.
+.products-base-tablet() {
+	// WC Products
+    ul.products li.product:not(.product-category) {
+        .woocommerce-loop-product__link {
+			order: 1;
+		}
+
+		.vamtam-product-content :is(.price, .vamtam-product-cats, .woocommerce-loop-product__title ) {
+			padding: 0 10px;
+		}
+
+		.vamtam-add-to-cart-wrap {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	.products li.product {
+		:where(.star-rating) {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+	}
+
+	&.elementor-product-loop-item-tablet--align- {
+		&left ul.products li.product .star-rating {
+			margin-right: auto;
+			margin-left: 10px;
+		}
+	  	&right ul.products li.product .star-rating {
+			margin-left: auto;
+			margin-right: 10px;
+		}
+	  	&center ul.products li.product .star-rating {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}

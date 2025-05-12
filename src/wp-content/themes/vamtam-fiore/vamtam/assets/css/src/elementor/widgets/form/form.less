@@ -1,0 +1,200 @@
+// Form.
+.elementor-widget-form {
+	// Base Theme Widget Styles.
+	&.vamtam-has-theme-widget-styles {
+		.flatpickr-mobile {
+			&:is([type=date],[type=time]) {
+				-webkit-appearance: initial;
+			}
+		}
+
+		.elementor-field-type-radio.elementor-field-group {
+			>.elementor-field-subgroup.elementor-subgroup-inline {
+				justify-content: center;
+				flex-wrap: nowrap;
+			}
+		}
+		form.elementor-form {
+			.elementor-field-type-step {
+				.elementor-subgroup-inline {
+					input[type=checkbox] {
+						display: none;
+						&+label {
+							display: inline-block;
+							margin-bottom: 15px;
+							border-radius: 40px;
+							padding: 20px;
+							width: 100%;
+							text-align: center;
+							font-weight: 600;
+							border: solid 2px var(--vamtam-accent-color-2);
+							transition: all 0.3s ease;
+							&:hover {
+								background: var(--vamtam-accent-color-1);
+								border-color: var(--vamtam-accent-color-1);
+								color: var(--vamtam-accent-color-5);
+							}
+						}
+						&:checked {
+							&+label {
+								background: var(--vamtam-accent-color-1);
+								border-color: var(--vamtam-accent-color-1);
+								color: var(--vamtam-accent-color-5);
+							}
+						}
+					}
+					input[type=radio] {
+						display: none;
+						&+label {
+							display: inline-block;
+							margin-bottom: 15px;
+							border-radius: 40px;
+							padding: 20px;
+							width: 100%;
+							text-align: center;
+							font-weight: 600;
+							border: solid 2px var(--vamtam-accent-color-2);
+							transition: all 0.3s ease;
+							&:hover {
+								background: var(--vamtam-accent-color-1);
+								border-color: var(--vamtam-accent-color-1);
+								color: var(--vamtam-accent-color-5);
+							}
+						}
+						&:checked {
+							&+label {
+								background: var(--vamtam-accent-color-1);
+								border-color: var(--vamtam-accent-color-1);
+								color: var(--vamtam-accent-color-5);
+							}
+						}
+					}
+				}
+				.elementor-field-type-html {
+					h3 {
+						margin-bottom: 3px;
+					}
+				}
+			}
+
+			.elementor-field-group {
+				.elementor-field-label {
+					padding-left: 0;
+					padding-right: 0;
+				}
+
+				.elementor-select-wrapper:before {
+					text-shadow: none;
+				}
+			}
+
+			.elementor-button .elementor-form-spinner {
+				font-size: 16px;
+			}
+		}
+		.elementor-field-type-checkbox {
+			.elementor-field-subgroup.elementor-subgroup-inline {
+				display: grid;
+				grid-template-columns: repeat(3,1fr);
+				grid-auto-rows: 1fr;
+				justify-content: center;
+				align-items: flex-start;
+				flex-wrap: nowrap;
+			}
+		}
+	}
+}
+
+.flatpickr-calendar {
+	.flatpickr-month {
+		padding-bottom: 20px;
+		.cur-year {
+			border: none !important;
+			border-radius: 0 !important;
+			font-size: inherit !important;
+		}
+	}
+}
+.flatpickr-day.today {
+	border-color: var(--vamtam-accent-color-6) !important;
+	&:hover {
+		background: var(--vamtam-accent-color-6) !important;
+		border-color: var(--vamtam-accent-color-6) !important;
+	}
+	&:focus {
+		background: var(--vamtam-accent-color-6) !important;
+		border-color: var(--vamtam-accent-color-6) !important;
+	}
+}
+.flatpickr-day.selected {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+	&:focus {
+		background: var(--vamtam-accent-color-1) !important;
+		border-color: var(--vamtam-accent-color-1) !important;
+	}
+	&:hover {
+		background: var(--vamtam-accent-color-1) !important;
+		border-color: var(--vamtam-accent-color-1) !important;
+	}
+}
+.flatpickr-day.startRange {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+	&:focus {
+		background: var(--vamtam-accent-color-1) !important;
+		border-color: var(--vamtam-accent-color-1) !important;
+	}
+	&:hover {
+		background: var(--vamtam-accent-color-1) !important;
+		border-color: var(--vamtam-accent-color-1) !important;
+	}
+}
+.flatpickr-day.endRange {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+	&:focus {
+		background: var(--vamtam-accent-color-1) !important;
+		border-color: var(--vamtam-accent-color-1) !important;
+	}
+	&:hover {
+		background: var(--vamtam-accent-color-1) !important;
+		border-color: var(--vamtam-accent-color-1) !important;
+	}
+}
+.flatpickr-day.selected.inRange {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+}
+.flatpickr-day.startRange.inRange {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+}
+.flatpickr-day.endRange.inRange {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+}
+.flatpickr-day.selected.prevMonthDay {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+}
+.flatpickr-day.startRange.prevMonthDay {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+}
+.flatpickr-day.endRange.prevMonthDay {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+}
+.flatpickr-day.selected.nextMonthDay {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+}
+.flatpickr-day.startRange.nextMonthDay {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+}
+.flatpickr-day.endRange.nextMonthDay {
+	background: var(--vamtam-accent-color-1) !important;
+	border-color: var(--vamtam-accent-color-1) !important;
+}

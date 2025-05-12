@@ -1,0 +1,61 @@
+// WC Cart - Mobile.
+.elementor-widget-woocommerce-cart {
+	// Base theme widget styles.
+	&.vamtam-has-theme-widget-styles {
+		.woocommerce {
+			table.cart {
+				tr {
+					padding: 30px 0;
+				}
+			}
+		}
+
+		.e-shop-table .cart td {
+			text-align: start !important;
+
+			&:before {
+				width: 100%;
+				text-align: start;
+				margin-bottom: 2px;
+			}
+		}
+
+		.cart_item {
+			display: grid;
+			grid-template-rows: auto auto;
+			grid-template-columns: ~"min(25%, 70px)" auto auto;
+			grid-row-gap: 10px;
+			grid-column-gap: 20px;
+			padding: 20px;
+
+			td {
+				padding: 0 !important;
+				&::before {
+					display: none;
+				}
+			}
+
+			.product-thumbnail {
+				display: block;
+				grid-row: 1/3;
+			}
+
+			.product-quantity {
+				grid-column: 1/3;
+				align-self: center;
+			}
+
+			.product-subtotal {
+				justify-self: flex-end;
+				align-self: center;
+			}
+
+			.product-remove {
+				grid-row: 1;
+				grid-column: 3;
+				justify-self: flex-end;
+			}
+
+		}
+	}
+}
