@@ -232,34 +232,41 @@ $breakpoint-mobile: 767px;
     .elementor-tab-content {
       padding: 0 2rem !important;
     }
-    .elementor-toggle{
-      .elementor-toggle-item{
-        .elementor-tab-title{
+    .elementor-toggle {
+      .elementor-toggle-item {
+        .elementor-tab-title {
           padding: 0 !important;
           border: 0 !important;
           text-align: start;
         }
-        .elementor-tab-content{
+        .elementor-tab-content {
           padding: 20px !important;
         }
       }
     }
   }
 }
-.our-clients{
+.our-clients {
   .elementor-image-carousel {
     .swiper-slide {
-      .swiper-slide-inner{
+      .swiper-slide-inner {
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        img{
+        img {
           height: 450px;
           width: 450px;
           object-fit: contain;
+          @media (max-width: $breakpoint-tablet) {
+            height: auto;
+          }
+
+          @media (max-width: $breakpoint-mobile) {
+            height: auto;
+          }
         }
-        .elementor-image-carousel-caption{
+        .elementor-image-carousel-caption {
           margin: 10px 0 !important;
         }
       }
