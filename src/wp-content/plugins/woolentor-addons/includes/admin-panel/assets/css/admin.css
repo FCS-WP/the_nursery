@@ -1,0 +1,607 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* Icon List */
+@font-face {
+    font-family: "woolentor-admin";
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    src: url("../fonts/woolentor-admin.ttf?55zl88") format("truetype"), url("../fonts/woolentor-admin.woff?55zl88") format("woff"), url("../fonts/woolentor-admin.svg?55zl88#woolentor-admin") format("svg");
+  }
+  .wli {
+    font-family: "woolentor-admin";
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-transform: none;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* speak: never; */
+  }
+  
+  .wli-feature-list:before {
+    content: "\e904";
+  }
+  
+  .wli-info:before {
+    content: "\e908";
+  }
+  
+  .wli-bell:before {
+    content: "\e900";
+  }
+  
+  .wli-cog:before {
+    content: "\e901";
+  }
+  
+  .wli-cog-light:before {
+    content: "\e902";
+  }
+  
+  .wli-envelope:before {
+    content: "\e903";
+  }
+  
+  .wli-file:before {
+    content: "\e905";
+  }
+  
+  .wli-grid:before {
+    content: "\e906";
+  }
+  
+  .wli-images:before {
+    content: "\e907";
+  }
+  
+  .wli-question:before {
+    content: "\e90d";
+  }
+  
+  .wli-masonry:before {
+    content: "\e909";
+  }
+  
+  .wli-monitor:before {
+    content: "\e90a";
+  }
+  
+  .wli-pencil:before {
+    content: "\e90b";
+  }
+  
+  .wli-play:before {
+    content: "\e90c";
+  }
+  
+  .wli-store:before {
+    content: "\e90e";
+  }
+  
+  .wli-support:before {
+    content: "\e90f";
+  }
+  
+  .wli-tag:before {
+    content: "\e910";
+  }
+  /* End Custom Icon List */
+
+  input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week] {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus {
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  #wpbody-content>.notice, #wpbody-content>.error {
+    display: none !important;
+  }
+
+  /* .toplevel_page_woolentoroptions #wpcontent {
+    padding-left: 0;
+  } */
+  .woolentor-options-wrapper {
+    width: calc(100% - 425px);
+    margin-right: auto;
+  }
+
+  @media only screen and (min-width: 1200px) and (max-width: 1549px) {
+    .woolentor-options-wrapper {
+      width: calc(100% - 350px);
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
+  .woolentor-options-wrapper {
+      width: 100%;
+  }
+  .woolentor-options-sidebar {
+    width: 100%;
+  }
+}
+
+  .woolentoropt-wrap {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.715;
+    position: relative;
+    visibility: visible;
+    color: #6D7175;
+  }
+  div#woolentor-opt-admin-app {
+    width: 100%;
+  }
+  .woolentoropt-wrap a, .woolentoropt-wrap button {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .woolentor-options-wrapper {
+    background-color: #fff;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    padding-bottom: 0;
+    align-self: flex-start;
+    min-height: auto;
+ }
+
+ .woolentor-navigation-wrapper {
+    margin-bottom: 20px;
+    background: #fff;
+    margin-left: -20px;
+    margin-right: -20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .woolentor-navigation-menu {
+    width: 80%;
+  }
+
+  .woolentor-navigation-menu li span.wli {
+    font-size: 16px;
+    line-height: 1;
+    display: block;
+    margin-right: 8px;
+    transition: all 0.15s ease 0s;
+    opacity: 0.75;
+  }
+.woolentor-navigation-menu li span.dashicons {
+  font-size: 18px;
+  margin-right: 5px;
+  transition: all 0.15s ease 0s;
+  opacity: 0.75;
+}
+
+.woolentor-options-content-wrapper{
+  display: flex;
+  /* gap: 20px; */
+  /* margin-top: 20px; */
+}
+
+.woolentor-fields-area .el-col.el-col-24 {
+  padding: 30px 0;
+}
+.woolentor-fields-area .woolentor-admin-option-field.el-col-24 + .woolentor-admin-option-field.el-col-24 {
+  border-top: 1px solid #EAEAEA;
+}
+.woolentor-card-field-label {
+  width: 55%;
+}
+/* .woolentor-opt-field-dimensions .woolentor-card-field-label {
+  width: 45%;
+} */
+.woolentor-full-width-field{
+  flex-direction: column;
+}
+.woolentor-full-width-field .el-select{
+  max-width: 100% !important;
+}
+.woolentor-full-width-field .woolentor-card-field-label,.woolentor-full-width-field .woolentor-card-field-element {
+  width: 100%;
+}
+.woolentor-full-width-field .woolentor-card-field-element{
+  padding-left: 0;
+}
+.woolentor-card-field-label p {
+  margin: 0;
+}
+.woolentor-card-field-element {
+  width: 45%;
+  padding-left:20px;
+}
+.woolentor-filed-type-html .woolentor-card-field-element {
+  padding-left: 0;
+}
+.woolentor-admin-option-field.woolentor-filed-type-html {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.woolentor-opt-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* margin-top: 30px; */
+  padding: 20px 0;
+  border-top: 1px solid #E7E7E7;
+}
+.woolentor-admin-sticky {
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 99;
+}
+
+/*** Sidebar ***/
+.woolentor-options-sidebar {
+  width: 375px;
+  margin-bottom: 30px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 34px;
+  min-height: 100%;
+  align-self: flex-start;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1549px) {
+  .woolentor-options-sidebar {
+    width: 320px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .woolentor-options-sidebar {
+    width: 280px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
+  .woolentor-options-sidebar {
+    width: 100%;
+  }
+}
+.woolentor-admin-sidebar img{
+  width: 100%;
+}
+/* Sidebar Pro-Banner */
+.woolentor-promo-banner {
+  margin-bottom: 30px;
+  /* padding-top: 47px; */
+}
+.woolentor-promo-banner a{
+  display: block;
+  line-height: 1;
+}
+.woolentor-pro-banner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+.woolentor-pro-banner-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.woolentor-pro-banner-logo img {
+  width: 90px;
+  height: auto;
+}
+.woolentor-pro-banner-summary {
+  font-size: 14px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+.woolentor-pro-banner-options {
+  font-size: 14px;
+  margin-bottom: 35px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+.woolentor-pro-banner-options li {
+  padding-left: 25px;
+  background-image: url(../images/icons/check.png);
+  background-repeat: no-repeat;
+  background-position: left 8px;
+}
+.woolentor-pro-banner-options li + li {
+  margin-top: 15px;
+}
+.woolentor-pro-banner-btn {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  padding: 5px 5px 5px 20px;
+  color: #FFFFFF;
+  border-radius: 100px;
+  background-color: #007EFF;
+}
+.woolentor-pro-banner-btn .icon {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  transition: all 0.3s ease 0s;
+  color: #007EFF;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+.woolentor-pro-banner-btn:hover {
+  border-color: #0065cc;
+  background-color: #0065cc;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  color: #FFFFFF;
+}
+
+.woolentor-rating{
+  display: flex;
+  width: 100%;
+  /* margin-top: 50px; */
+  padding: 30px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1549px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
+  .woolentor-rating {
+    margin-top: 30px;
+  }
+}
+.woolentor-rating-icon {
+  align-self: center;
+  width: 52px;
+}
+.woolentor-rating-intro {
+  width: calc(100% - 52px);
+  padding-left: 20px;
+}
+.woolentor-rating-intro p {
+  font-size: 14px;
+  margin: 0;
+}
+.woolentor-rating-intro p a {
+  color: #007EFF;
+}
+.woolentor-rating-intro p a:hover {
+  text-decoration: underline;
+}
+.woolentor-rating-trustpilot {
+  display: block;
+  text-align: center;
+}
+.woolentor-rating-trustpilot a{
+  display: block;
+  line-height: 1;
+}
+
+/* Module Settings Popup */
+.woolentor-admin-btn {
+  font-size: 14px;
+  line-height: 24px;
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px 30px;
+  text-transform: capitalize;
+  color: #6D7175;
+  border: 1px solid #E7E7E7;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  color: #FFFFFF;
+  border-color: #007EFF;
+  background-color: #007EFF;
+}
+a.woolentor-admin-btn:hover {
+  color: #FFFFFF;
+}
+.woolentor-admin-btn.disabled {
+  cursor: not-allowed;
+  color: rgba(109, 113, 117, 0.5);
+  border: 1px solid #E7E7E7;
+  background-color: #FFFFFF;
+}
+.woolentor-admin-btn:not(.disabled):hover {
+  border-color: #0065cc;
+  background-color: #0065cc;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+.woolentor-module-reset {
+  background: #FFFFFF;
+  border-color: #E7E7E7;
+  color: rgba(109, 113, 117, 0.5);
+  font-weight: normal;
+}
+.woolentor-module-setting-popup .woolentor-admin-btn {
+  margin: 0;
+  padding: 7px 35px;
+  transition: 0.4s;
+}
+.woolentor-module-reset:hover {
+  background-color: rgb(221, 51, 51) !important;
+  border-color: rgb(221, 51, 51) !important;
+  color: #FFFFFF !important;
+}
+a.woolentor-admin-settings-link {
+  line-height: 1;
+  box-shadow: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Home page */
+.welcome-container .el-col.el-col-24{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.welcome-container .section-title {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Free VS Pro Tabs */
+.freevspro:not(.is-active){
+  color: #f56640;
+}
+.woolentor-admin-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.woolentor-admin-header-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 23px !important;
+  margin-bottom: 2px;
+  color: #202223;
+  margin-top: 0;
+}
+.woolentor-admin-header-content {
+  width: 60%;
+}
+.woolentor-admin-header-text {
+  font-size: 14px;
+  margin: 0;
+}
+.woolentor-admin-header-actions {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.woolentor_freevspro_tabs .woolentor-admin-header .woolentor-admin-btn.enable{
+  background-color: #007EFF;
+  color: #ffffff;
+}
+.woolentor_freevspro_tabs .woolentor-admin-header .woolentor-admin-btn.enable:hover{
+  background-color: #ffffff;
+  color: #007EFF;
+}
+.different-free-vs-pro table {
+  border: none;
+  width: 100%;
+  border-collapse:collapse;
+}
+.different-free-vs-pro table tr {
+  flex-flow: row wrap;
+  border-right: 1px solid #d3d4d4;
+  border-left: 1px solid #d3d4d4;
+}
+.different-free-vs-pro table tr td, .different-free-vs-pro table tr th {
+  word-break: break-all;
+  border: 1px solid #d3d4d4;
+  font-size: 14px;
+  padding: 16px;
+  text-align: center;
+  border-right: 0;
+  border-left: 0;
+}
+.different-free-vs-pro table tbody tr td:first-child, .different-free-vs-pro table thead tr th:first-child{
+  text-align: left;
+}
+.different-free-vs-pro table tbody tr:nth-child(2n+1) {
+  background-color: #fbfcfd;
+}
+#woolentor_freevspro_tabs .woolentor_heading_style_two{
+  padding-left: 0;
+}
+.different-free-vs-pro table tbody tr.explore-pro-features{
+  background-color: #ffffff;
+}
+.different-free-vs-pro table tbody tr.explore-pro-features td {
+  text-align: center;
+  font-size: 16px;
+}
+.different-free-vs-pro .explore-pro-features a {
+  display: inline-flex;
+}
+
+.woolentor-options-content-wrapper .el-switch__core {
+  min-width: 50px;
+}
+
+/* Drawer */
+.woolentor-notification-drawer {
+  top: 32px !important;
+  height: calc(100% - 32px) !important;
+}
+.woolentor-notification-drawer .el-drawer__header {
+  border-bottom: 1px solid var(--el-border-color-lighter) !important;
+  padding-bottom: 20px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Normal  :1366px. */
+@media (min-width: 1200px) and (max-width: 1400px) {
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .woolentor-options-content-wrapper {
+    gap: 20px;
+  }
+  .woolentor-options-wrapper{
+    width: calc(100% - 200px);
+  }
+  .woolentor-options-sidebar {
+    width: 220px;
+  }
+  .woolentor-rating {
+    flex-direction: column;
+    padding: 15px;
+    text-align: left;
+  }
+  .el-menu--popup-container ul li span.wli {
+    margin-right: 7px;
+  }
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+  .woolentor-options-content-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .el-menu--popup-container ul li span.wli {
+    margin-right: 7px;
+}
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  .woolentor-options-content-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .el-menu--popup-container ul li span.wli{
+    margin-right: 7px;
+  }
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  
+}

@@ -1,0 +1,555 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+    "name": "woolentor/product-flash-sale",
+    "category": "woolentor-blocks",
+    "title": "WL: Product Flash Sale",
+    "description":"Display Flash Sale Product.",
+    "keywords": ["woolentor","flash sale","discount","product","offer product"],
+    "render": "file:./index.php",
+    "supports": {
+        "align": [ "wide", "full" ]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        }
+    },
+    "attributes": {
+        "blockUniqId":{
+            "type": "string",
+            "default": ""
+        },
+        "preview": {
+            "type": "boolean",
+            "default": false
+        },
+        "areaPadding": {
+            "type": "object",
+            "default": {
+                "top":"",
+                "right":"",
+                "bottom":"",
+                "left":"",
+                "unit":"px",
+                "link":"yes"
+            },
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} { padding: {{areaPadding}}; }"
+            }
+        },
+        "areaBGProperty":{
+            "type": "object",
+            "default": {
+                "imageId": null,
+                "imageUrl":"",
+                "position": "",
+                "attachment": "",
+                "repeat": "",
+                "size": ""
+            },
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}}"
+            }
+        },
+
+        "selectedDeal": {
+            "type": "string"
+        },
+
+        "perPage":{
+            "type": "number",
+            "default": 9
+        },
+        "customOrder":{
+            "type": "boolean",
+            "default": false
+        },
+        "orderBy":{
+            "type": "string",
+            "default": "none"
+        },
+        "order":{
+            "type": "string",
+            "default": "DESC"
+        },
+
+        "columns": {
+            "type": "object",
+            "default": {
+                "desktop": 3
+            }
+        },
+        "noGutter":{
+            "type": "boolean",
+            "default": false
+        },
+        "columnSpace":{
+            "type": "number",
+            "default": 15,
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "noGutter", 
+                            "condition": "==", 
+                            "value": false
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-grid:not(.woolentor-no-gutters) { column-gap: {{columnSpace}}px; }"
+            }
+        },
+        "rowSpace":{
+            "type": "number",
+            "default": 15,
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "noGutter", 
+                            "condition": "==", 
+                            "value": false
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-grid:not(.woolentor-no-gutters) { row-gap: {{rowSpace}}px; }"
+            }
+        },
+
+        "showSountdown":{
+            "type": "boolean",
+            "default": true
+        },
+        "countdownStyle": {
+            "type": "string",
+            "default":"1"
+        },
+        "countdownPosition": {
+            "type": "string",
+            "default":"content_top"
+        },
+        "countdownTitle": {
+            "type": "string"
+        },
+        "customLabels":{
+            "type": "boolean",
+            "default": false
+        },
+        "customlabelDays":{
+            "type": "string"
+        },
+        "customlabelHours":{
+            "type": "string"
+        },
+        "customlabelMinutes":{
+            "type": "string"
+        },
+        "customlabelSeconds":{
+            "type": "string"
+        },
+
+        "showStockProgress":{
+            "type": "boolean",
+            "default": true
+        },
+        "soldCustomText":{
+            "type": "string"
+        },
+        "availableCustomText":{
+            "type": "string"
+        },
+
+        "productInnerMargin": {
+            "type": "object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product{ margin:{{productInnerMargin}}; }"
+            }
+        },
+        "productInnerPadding": {
+            "type": "object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product{ padding:{{productInnerPadding}}; }"
+            }
+        },
+
+        "productTitleColor":{
+            "type": "string",
+            "style": {
+                "selector": "{{WOOLENTOR_WRAPPER}} .woolentor-flash-product .woolentor-flash-product-title a{color:{{productTitleColor}}; }"
+            }
+        },
+        "productTitleHoverColor":{
+            "type": "string",
+            "style": {
+                "selector": "{{WOOLENTOR_WRAPPER}} .woolentor-flash-product .woolentor-flash-product-title a:hover{color:{{productTitleHoverColor}}; }"
+            }
+        },
+        "productTitleSize":{
+            "type": "string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product .woolentor-flash-product-title a { font-size: {{productTitleSize}}; }"
+            }
+        },
+        "productTitleMargin": {
+            "type": "object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product .woolentor-flash-product-title{ margin:{{productTitleMargin}}; }"
+            }
+        },
+
+        "productPriceMargin": {
+            "type": "object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-price{ margin:{{productPriceMargin}}; }"
+            }
+        },
+        "productSalePriceColor":{
+            "type": "string",
+            "style": {
+                "selector": "{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-price, {{WOOLENTOR_WRAPPER}} .woolentor-flash-product-price ins{color:{{productSalePriceColor}}; }"
+            }
+        },
+        "productSalePriceSize":{
+            "type": "string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-price, {{WOOLENTOR_WRAPPER}} .woolentor-flash-product-price ins { font-size: {{productSalePriceSize}}; }"
+            }
+        },
+        "productRegularPriceColor":{
+            "type": "string",
+            "style": {
+                "selector": "{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-price del{color:{{productRegularPriceColor}}; }"
+            }
+        },
+        "productRegularPriceSize":{
+            "type": "string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-price del { font-size: {{productRegularPriceSize}}; }"
+            }
+        },
+
+        "productRatingIconColor":{
+            "type": "string",
+            "default":"#ecb804",
+            "style": {
+                "selector": "{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-rating i{color:{{productRatingIconColor}}; }"
+            }
+        },
+        "productRatingIconSize":{
+            "type": "string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-rating i{ font-size: {{productRatingIconSize}}; }"
+            }
+        },
+        "productRatingNumberColor":{
+            "type": "string",
+            "default":"#000000",
+            "style": {
+                "selector": "{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-rating span{color:{{productRatingNumberColor}}; }"
+            }
+        },
+        "productRatingNumberSize":{
+            "type": "string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-rating span{ font-size: {{productRatingNumberSize}}; }"
+            }
+        },
+
+        "productInfoSeparatorColor":{
+            "type": "string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-offer-timer,{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-offer-pos-c-bottom .woolentor-flash-product-offer-timer{ border-color: {{productInfoSeparatorColor}}; }"
+            }
+        },
+        "productInfoOutOfStockColor":{
+            "type": "string",
+            "default":"#ffffff",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-image span{ color: {{productInfoOutOfStockColor}}; }"
+            }
+        },
+        "productInfoOutOfStockBGColor":{
+            "type": "string",
+            "default":"#f05b64",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-image span{ background-color: {{productInfoOutOfStockBGColor}}; }"
+            }
+        },
+
+        "actionBtnBorderRadius":{
+            "type": "object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-action a{ border-radius: {{actionBtnBorderRadius}}; }"
+            }
+        },
+        "actionBtnColor":{
+            "type": "string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-action i, {{WOOLENTOR_WRAPPER}} .woolentor-flash-product-action svg { color: {{actionBtnColor}}; }"
+            }
+        },
+        "actionBtnBorder":{
+            "type":"object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-action a"
+            }
+        },
+        "actionBtnBGColor":{
+            "type": "string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-action a { background-color: {{actionBtnBGColor}}; }"
+            }
+        },
+
+        "actionBtnHoverColor":{
+            "type": "string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-action a:hover i, {{WOOLENTOR_WRAPPER}} .woolentor-flash-product-action a:hover svg { color: {{actionBtnHoverColor}}; }"
+            }
+        },
+        "actionBtnBGHoverColor":{
+            "type": "string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-action a:hover { background-color: {{actionBtnBGHoverColor}}; }"
+            }
+        },
+        "actionBtnHoverBorder":{
+            "type":"object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-action a:hover"
+            }
+        },
+
+        "counterTitleColor":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showSountdown", 
+                            "condition": "==", 
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-offer-timer-text{ color: {{counterTitleColor}}; }"
+            }
+        },
+        "counterTitleBGColor":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showSountdown", 
+                            "condition": "==", 
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-offer-timer-text{ background-color: {{counterTitleBGColor}}; }"
+            }
+        },
+        "counterTitleSize":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showSountdown", 
+                            "condition": "==", 
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-offer-timer-text{ font-size: {{counterTitleSize}}; }"
+            }
+        },
+        "counterTitleMargin": {
+            "type": "object",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showSountdown", 
+                            "condition": "==", 
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-offer-timer-text{ margin:{{counterTitleMargin}}; }"
+            }
+        },
+
+        "counterNumberColor":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showSountdown", 
+                            "condition": "==", 
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-countdown .woolentor-time .woolentor-count{ color: {{counterNumberColor}}!important; }"
+            }
+        },
+        "counterNumberSize":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showSountdown", 
+                            "condition": "==", 
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-countdown .woolentor-time .woolentor-count{ font-size: {{counterNumberSize}}!important; }"
+            }
+        },
+        "counterNumberBGColor":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showSountdown", 
+                            "condition": "==", 
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-countdown .woolentor-time .woolentor-count{ background-color: {{counterNumberBGColor}}!important; }"
+            }
+        },
+
+        "counterLabelColor":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showSountdown", 
+                            "condition": "==", 
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-countdown .woolentor-time .woolentor-label{ color: {{counterLabelColor}}!important; }"
+            }
+        },
+        "counterLabelSize":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showSountdown", 
+                            "condition": "==", 
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-countdown .woolentor-time .woolentor-label{ font-size: {{counterLabelSize}}!important; }"
+            }
+        },
+
+        "stockProgressBarColor":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showStockProgress", 
+                            "condition": "==", 
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-progress-sold{ background-color: {{stockProgressBarColor}}; }"
+            }
+        },
+        "stockProgressBarBGColor":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showStockProgress", 
+                            "condition": "==",
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-progress-total{ background-color: {{stockProgressBarBGColor}}; }"
+            }
+        },
+        "stockProgressBarSoldLabelColor":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showStockProgress", 
+                            "condition": "==",
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-progress-label span:first-child{ color: {{stockProgressBarSoldLabelColor}}; }"
+            }
+        },
+        "stockProgressBarAvailableLabelColor":{
+            "type": "string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showStockProgress", 
+                            "condition": "==",
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-progress-label span:last-child{ color: {{stockProgressBarAvailableLabelColor}}; }"
+            }
+        },
+        "stockProgressBarHeight":{
+            "type": "number",
+            "default":10,
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showStockProgress", 
+                            "condition": "==",
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-progress-total{ height: {{stockProgressBarHeight}}px; }"
+            }
+        },
+        "stockProgressBarBorderRadius":{
+            "type": "object",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "showStockProgress", 
+                            "condition": "==",
+                            "value": true
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-progress-total,{{WOOLENTOR_WRAPPER}} .woolentor-flash-product-progress-sold{ border-radius: {{stockProgressBarBorderRadius}}; }"
+            }
+        }
+
+    }
+}

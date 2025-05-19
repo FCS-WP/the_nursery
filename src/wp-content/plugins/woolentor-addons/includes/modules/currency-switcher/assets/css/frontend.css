@@ -1,0 +1,91 @@
+.wp-block-woolentor-freewidget{
+    display: block;
+}
+.woolentor-selected-currency-wrap {
+    padding: 6px 10px;
+    border: 1px solid rgba(129, 129, 129, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.woolentor-selected-currency-wrap span.woolentor-selected-currency {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.woolentor-currency-switcher{
+    position: relative;
+}
+.woolentor-currency-dropdown {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    right: 0;
+}
+.woolentor-currency-dropdown-arrow{
+    position: relative;
+}
+.woolentor-currency-dropdown-arrow::after {
+    content: "";
+    border-width: 2px 2px 0 0;
+    height: 12px;
+    width: 12px;
+    margin: -6px 0 0 5px;
+    border-style: solid;
+    transition: all .3s ease-out;
+    border-color: unset;
+    transform: rotate(135deg);
+    vertical-align: middle;
+    display: inline-block;
+    color: #222222;
+}
+.woolentor-selected-currency-wrap.active .woolentor-currency-dropdown-arrow::after {
+    transform: rotate(-45deg);
+    margin: 3px 0 0 0px;
+}
+.woolentor-currency-dropdown {
+    box-shadow: 0 0 4px -1px rgba(0,0,0,0.31);
+    background-color: #ffffff;
+}
+.woolentor-currency-dropdown ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.woolentor-currency-dropdown ul li {
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
+}
+.woolentor-currency-dropdown ul li img,.woolentor-selected-currency-wrap .woolentor-selected-currency img {
+    height: 20px;
+    min-width: 20px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: text-top;
+}
+.woolentor-currency-dropdown ul li.hide-currency{
+    display: none;
+}
+.woolentor-currency-dropdown:not(.list-style) ul li:hover{
+    background-color: rgba(129, 129, 129, 0.2);
+}
+.woolentor-currency-dropdown ul li + li {
+    border-top: 1px solid rgba(129, 129, 129, 0.2);
+}
+.woolentor-currency-dropdown.list-style {
+    position: static;
+    box-shadow: none;
+}
+.woolentor-currency-dropdown.list-style ul li {
+    padding: 10px 0;
+}
+.woolentor-currency-dropdown.list-style ul li:hover, .woolentor-currency-dropdown.list-style ul li.active-currency{
+    color: #f05b64;
+}

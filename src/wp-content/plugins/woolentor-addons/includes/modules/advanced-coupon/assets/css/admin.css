@@ -1,0 +1,55 @@
+.woolentor-coupon-pro-options{
+    opacity: 0.8;
+    padding: 0 20px;
+}
+.woolentor-coupon-pro-options textarea {
+    opacity: 0.5;
+}
+.woocommerce_options_panel .woolentor-coupon-pro-options fieldset label {
+    width: 150px;
+    float: inline-start;
+}
+.woolentor-coupon-pro-options fieldset {
+    border: 1px solid #ddd;
+}
+.woolentor-coupon-pro-options legend {
+    margin: 0;
+    float: none;
+    width: auto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+    align-self: center;
+    margin-left: 12px;
+    padding: 3px 10px;
+    color: #FF0000;
+    border-radius: 60px;
+    background: rgba(255, 0, 0, 0.1);
+    content: "Pro";
+}
+
+p.form-field.woolentor_coupon_url_field input {
+    padding-right: 30px;
+}
+p.form-field.woolentor_coupon_url_field:before {
+    content: "\f105";
+    position: absolute;
+    margin-left: -30px;
+    height: 31px;
+    width: 30px;
+    text-align: center;
+    line-height: 31px;
+    border-left: 1px solid #ccc;
+    cursor: pointer;
+    font-family: 'dashicons';
+    font-size: 16px;
+}
+p.form-field.woolentor_coupon_url_field.copied:before{
+    content: "\f15e";
+}
+#woolentor_bulk_coupon{
+    display: none;
+}
+#woolentor_bulk_coupon .woocommerce_options_panel label {
+    width: 200px;
+}

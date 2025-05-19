@@ -1,0 +1,179 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+    "name": "woolentor/ever-compare-table",
+    "category": "woolentor-blocks",
+    "title": "WL: EverCompare",
+    "description":"Display compare table.",
+    "keywords": ["woolentor","compare","table","ever","compare table"],
+    "render": "file:./index.php",
+    "supports": {
+        "align": [ "wide", "full" ]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        }
+    },
+    "attributes": {
+        "blockUniqId":{
+            "type": "string",
+            "default": ""
+        },
+        "preview": {
+            "type": "boolean",
+            "default": false
+        },
+        "areaPadding": {
+            "type": "object",
+            "default": {
+                "top":"",
+                "right":"",
+                "bottom":"",
+                "left":"",
+                "unit":"px",
+                "link":"yes"
+            },
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} { padding: {{areaPadding}}; }"
+            }
+        },
+        "areaBGProperty":{
+            "type": "object",
+            "default": {
+                "imageId": null,
+                "imageUrl":"",
+                "position": "",
+                "attachment": "",
+                "repeat": "",
+                "size": ""
+            },
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}}"
+            }
+        },
+        "emptyTableText":{
+            "type":"string"
+        },
+
+        "headingColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .htcolumn-field-name{ color:{{headingColor}}; }"
+            }
+        },
+        "headingSize":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .htcolumn-field-name{ font-size:{{headingSize}}; }"
+            }
+        },
+        "eventBackgroundColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .htcompare-row:nth-child(2n) .htcompare-col{ background-color:{{eventBackgroundColor}}; }"
+            }
+        },
+        "oddBackgroundColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .htcompare-row:nth-child(2n+1) .htcompare-col{ background-color:{{oddBackgroundColor}}; }"
+            }
+        },
+
+        "contentColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .htcolumn-value{ color:{{contentColor}}; }"
+            }
+        },
+        "contentLinkColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .htcolumn-value a{ color:{{contentLinkColor}}; }"
+            }
+        },
+
+        "tableColBorder":{
+            "type":"object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .htcompare-col,{{WOOLENTOR_WRAPPER}} .compare-data-primary .htcolumn-value"
+            }
+        },
+
+        "cartBtnColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .htcolumn-value a.htcompare-cart-button{ color:{{cartBtnColor}}; }"
+            }
+        },
+        "cartBtnBGColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .htcolumn-value a.htcompare-cart-button{ background-color:{{cartBtnBGColor}}; }"
+            }
+        },
+        "cartBtnHoverColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .htcolumn-value a.htcompare-cart-button:hover{ color:{{cartBtnHoverColor}}; }"
+            }
+        },
+        "cartBtnHoverBGColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .htcolumn-value a.htcompare-cart-button:hover{ background-color:{{cartBtnHoverBGColor}}; }"
+            }
+        },
+
+        "shareBtnSize":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .ever-compare-shareable-link .evercompare-copy-link{ font-size:{{shareBtnSize}}; }"
+            }
+        },
+        "shareBtnPadding": {
+            "type": "object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .ever-compare-shareable-link .evercompare-copy-link{ padding:{{shareBtnPadding}}; }"
+            }
+        },
+        "shareBtnNormalColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .ever-compare-shareable-link .evercompare-copy-link{ color:{{shareBtnNormalColor}}; }"
+            }
+        },
+        "shareBtnNormalBGColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .ever-compare-shareable-link .evercompare-copy-link{ background-color:{{shareBtnNormalBGColor}}; }"
+            }
+        },
+        "shareBtnNormalBorder":{
+            "type":"object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .ever-compare-shareable-link .evercompare-copy-link"
+            }
+        },
+        "shareBtnHoverColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .ever-compare-shareable-link .evercompare-copy-link:hover{ color:{{shareBtnHoverColor}}; }"
+            }
+        },
+        "shareBtnHoverBGColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .ever-compare-shareable-link .evercompare-copy-link:hover{ background-color:{{shareBtnHoverBGColor}}; }"
+            }
+        },
+        "shareBtnHoverBorder":{
+            "type":"object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .ever-compare-shareable-link .evercompare-copy-link:hover"
+            }
+        }
+
+    }
+}

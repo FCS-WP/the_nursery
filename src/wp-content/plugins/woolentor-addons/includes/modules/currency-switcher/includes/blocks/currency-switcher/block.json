@@ -1,0 +1,148 @@
+{
+	"name": "woolentor/currency-switcher",
+    "category": "woolentor-blocks",
+    "title": "WL : Currency Switcher",
+    "description":"Display currency list added from Module.",
+    "keywords": ["woolentor","currency","multi currency","WooCommerce currency"],
+    "attributes": {
+        "blockUniqId":{
+            "type": "string",
+            "default": ""
+        },
+        "areaPadding": {
+            "type": "object",
+            "default": {
+                "top":"",
+                "right":"",
+                "bottom":"",
+                "left":"",
+                "unit":"px",
+                "link":"yes"
+            },
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} { padding: {{areaPadding}}; }"
+            }
+        },
+        "areaBGProperty":{
+            "type": "object",
+            "default": {
+                "imageId": null,
+                "imageUrl":"",
+                "position": "",
+                "attachment": "",
+                "repeat": "",
+                "size": ""
+            },
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}}"
+            }
+        },
+        "currencyStyle":{
+            "type":"string",
+            "default":"dropdown"
+        },
+        "showFlags":{
+            "type": "boolean",
+            "default": true
+        },
+        "flagStyle":{
+            "type":"string",
+            "default":"circle"
+        },
+
+        "currencyColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-currency-dropdown ul li:not(.active-currency){ color:{{currencyColor}}; }"
+            }
+        },
+        "currencySize":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-currency-dropdown ul li:not(.active-currency){ font-size:{{currencySize}}; }"
+            }
+        },
+        "currencyBorder":{
+            "type":"object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-currency-dropdown ul li + li"
+            }
+        },
+        "currencyPadding": {
+            "type": "object",
+            "default": {
+                "top":"",
+                "right":"",
+                "bottom":"",
+                "left":"",
+                "unit":"px",
+                "link":"yes"
+            },
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-currency-dropdown ul li{ padding:{{currencyPadding}}; }"
+            }
+        },
+        "currencyHoverColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-currency-dropdown ul li:not(.active-currency):hover{ color:{{currencyHoverColor}}; }"
+            }
+        },
+        "currencyHoverBgColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-currency-dropdown ul li:not(.active-currency):hover{ background-color:{{currencyHoverBgColor}}; }"
+            }
+        },
+
+        "currenctCurrencyColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-selected-currency-wrap span.woolentor-selected-currency,{{WOOLENTOR_WRAPPER}} .woolentor-currency-dropdown.list-style ul li.active-currency{ color:{{currenctCurrencyColor}}; }"
+            }
+        },
+        "currenctCurrencyBGColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-selected-currency-wrap span.woolentor-selected-currency,{{WOOLENTOR_WRAPPER}} .woolentor-currency-dropdown.list-style ul li.active-currency{ background-color:{{currenctCurrencyBGColor}}; }",
+                "dependency": [
+                    [
+                        {
+                            "key": "currencyStyle", 
+                            "condition": "==", 
+                            "value": "list"
+                        }
+                    ]
+                ]
+            }
+        },
+        "currenctCurrencySize":{
+            "type":"string",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-selected-currency-wrap span.woolentor-selected-currency,{{WOOLENTOR_WRAPPER}} .woolentor-currency-dropdown.list-style ul li.active-currency{ font-size:{{currenctCurrencySize}}; }"
+            }
+        },
+        "currenctCurrencyBorder":{
+            "type":"object",
+            "style" : {
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-selected-currency-wrap,{{WOOLENTOR_WRAPPER}} .woolentor-currency-dropdown.list-style ul li.active-currency"
+            }
+        },
+        "dropdownArrowColor":{
+            "type":"string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "currencyStyle", 
+                            "condition": "==", 
+                            "value": "dropdown"
+                        }
+                    ]
+                ],
+                "selector":"{{WOOLENTOR_WRAPPER}} .woolentor-currency-dropdown-arrow::after{ color:{{dropdownArrowColor}}; }"
+            }
+        }
+
+    }
+}
