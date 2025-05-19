@@ -1,0 +1,54 @@
+.woolentor-cart-reserve-notice {
+    background: #f7f6f7;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.woolentor-cart-reserve-notice p {
+    margin: 0;
+    padding: 0;
+}
+.woolentor-timer {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* Style 1 - Default */
+.woolentor-cart-reserve-notice.woolentor-notice-style-1 {
+    border-radius: 4px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+/* Style 2 - Modern */
+.woolentor-cart-reserve-notice.woolentor-notice-style-2 {
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+.woolentor-cart-reserve-notice.woolentor-notice-style-2 p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+.woolentor-cart-reserve-notice.woolentor-notice-style-2 .woolentor-timer {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Style 3 - Bordered */
+.woolentor-cart-reserve-notice.woolentor-notice-style-3 {
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+.woolentor-cart-reserve-notice.woolentor-notice-style-3 p {
+    font-weight: 500;
+}
+.woolentor-cart-reserve-notice.woolentor-notice-style-3 .woolentor-timer {
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: rgba(255, 107, 107, 0.1);
+}

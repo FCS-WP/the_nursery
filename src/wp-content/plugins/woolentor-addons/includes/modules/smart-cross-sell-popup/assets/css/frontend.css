@@ -1,0 +1,195 @@
+.woolentor-cross-sell-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999999;
+    padding: 20px;
+}
+
+.woolentor-popup-wrapper {
+    position: relative;
+    background: #fff;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    max-height: calc(100% - 50px);
+    overflow-y: auto;
+}
+
+.woolentor-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.woolentor-success-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+.woolentor-popup-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    padding: 0;
+    cursor: pointer;
+    color: #999;
+}
+
+.woolentor-popup-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.woolentor-view-cart,
+.woolentor-continue-shopping {
+    flex: 1;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.woolentor-view-cart {
+    background: #4169e1;
+    color: #fff;
+    text-decoration: none;
+}
+
+.woolentor-continue-shopping {
+    background: #fff;
+    color: #4169e1;
+    border: 1px solid #4169e1;
+}
+
+.woolentor-popup-recommended {
+    margin-bottom: 30px;
+}
+
+.woolentor-popup-recommended h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.woolentor-cross-sell-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.woolentor-cross-sell-product {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 15px;
+    text-align: center;
+}
+
+.woolentor-product-image {
+    margin-bottom: 10px;
+}
+
+.woolentor-product-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.woolentor-product-content {
+    text-align: center;
+}
+
+.woolentor-product-title {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.woolentor-product-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.woolentor-product-price {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.woolentor-add-to-cart {
+    background: #4169e1;
+    color: var(--button-color);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.woolentor-add-to-cart:hover {
+    background: #2851db;
+    color: var(--button-hover-color);
+}
+
+.woolentor-popup-footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.woolentor-checkout-button {
+    display: inline-block;
+    background: #4CAF50;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.woolentor-checkout-button:hover {
+    background: #45a049;
+    color: #fff;
+}
+
+/* Loading state */
+.woolentor-add-to-cart.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Added state */
+.woolentor-add-to-cart.added {
+    background: #4CAF50;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+    .woolentor-popup-wrapper {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .woolentor-popup-actions {
+        flex-direction: column;
+    }
+
+    .woolentor-cross-sell-products {
+        grid-template-columns: 1fr;
+    }
+}

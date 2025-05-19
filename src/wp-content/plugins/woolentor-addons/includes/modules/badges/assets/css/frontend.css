@@ -1,0 +1,52 @@
+.woolentor-product-badge-main-area{
+    position: relative;
+}
+.woolentor-product-badge-area{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.woolentor-product-badge-area.woolentor-product-badge-position-top_right{
+    left: auto;
+    right: 15px;
+}
+.woolentor-product-badge-area.woolentor-product-badge-position-bottom_left{
+    top: auto;
+    bottom: 15px;
+}
+.woolentor-product-badge-area.woolentor-product-badge-position-bottom_right{
+    top: auto;
+    left: auto;
+    right: 15px;
+    bottom: 15px;
+}
+.woolentor-product-badge{
+    color: #fff;
+    background-color: #222;
+    padding: 2px 8px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Support Universal Layout */
+.ht-products .ht-product .ht-product-inner .ht-product-image-wrap .woolentor-product-badge-area.has_individual_badge{
+    position: static;
+}
+.ht-products .ht-product .ht-product-inner .ht-product-image-wrap .woolentor-product-badge-area.has_individual_badge .woolentor-product-badge,.woolentor-product-badge-type-image .woolentor-product-badge, .ht-product-2 [class*="ht-product-image-wrap"] .woolentor-product-badge-area.has_individual_badge{
+    background-color: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-size: 13px !important;
+}
+
+/* Support Grid Layout */
+.ht-product-2 [class*="ht-product-image-wrap"] .woolentor-product-badge-area.has_individual_badge{
+    top: 18px;
+    right: 20px;
+    left: auto;
+}
+
+/* Single Product addon */
+.woocommerce-product-gallery__image .woolentor-product-badge-area .ht-product-label,.woolentor-product-gallery-video .woolentor-product-badge-area .ht-product-label{
+    position: static !important;
+}

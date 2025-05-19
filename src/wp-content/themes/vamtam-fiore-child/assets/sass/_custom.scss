@@ -1,0 +1,248 @@
+// Breakpoints
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 767px;
+
+.popup-register {
+  .woolentor-myaccount-form-register {
+    h2 {
+      display: none;
+    }
+  }
+
+  .woocommerce-Input {
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+}
+
+.custom-title-baner-home {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.5s ease, visibility 1.5s;
+  position: absolute;
+  width: 100%;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+  }
+}
+
+.group-animation-heading {
+  position: relative;
+  height: 150px;
+}
+
+.brand-logo {
+  .wl-row {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.post-type-archive-product {
+  .product {
+    a {
+      > img {
+        display: none !important;
+      }
+    }
+
+    .custom-product-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+
+      .custom-thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.4s ease-in-out;
+        opacity: 0;
+        z-index: 1;
+
+        &.main-image {
+          opacity: 1;
+          z-index: 2;
+        }
+
+        &.hover-image {
+          z-index: 3;
+        }
+      }
+
+      &:hover {
+        .main-image {
+          opacity: 0;
+        }
+
+        .hover-image {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        height: 250px;
+      }
+    }
+  }
+}
+
+.combo-item {
+  border: 1px solid #ccc;
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+
+  &.active {
+    border-color: teal;
+    outline: 2px solid teal;
+  }
+}
+
+.slick-slider {
+  img {
+    max-height: 350px;
+    margin: 0 auto;
+    object-fit: contain;
+
+    @media (max-width: $breakpoint-mobile) {
+      max-height: 200px;
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 16px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &:hover,
+    &:focus {
+      background: transparent;
+      border: 0;
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+
+    &::before {
+      background-image: url("/wp-content/uploads/2025/05/left-arrow-2.png");
+    }
+  }
+
+  .slick-next {
+    right: 0;
+
+    &::before {
+      background-image: url("/wp-content/uploads/2025/05/right-arrow-2.png");
+    }
+  }
+}
+
+#plant-combo-builder {
+  display: flex;
+  gap: 40px;
+
+  .column-left,
+  .column-right {
+    width: 50%;
+  }
+
+  .column-right {
+    h3 {
+      margin: 15px 0;
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+
+    .column-left,
+    .column-right {
+      width: 100%;
+    }
+  }
+}
+
+.group-total-add-to-cart {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.combo-options {
+  &.planters,
+  &.plants {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+.tab-faq {
+  .elementor-tabs-wrapper {
+    .elementor-tab-title {
+      margin: 10px !important;
+      &.elementor-active {
+        background-color: #6a6e49 !important ;
+        border-inline-end-style: solid !important;
+        color: white !important;
+        border: 1px solid #6a6e49 !important;
+      }
+    }
+  }
+  .elementor-tabs-content-wrapper {
+    .elementor-tab-content {
+      padding: 0 2rem !important;
+    }
+    .elementor-toggle{
+      .elementor-toggle-item{
+        .elementor-tab-title{
+          padding: 0 !important;
+          border: 0 !important;
+          text-align: start;
+        }
+        .elementor-tab-content{
+          padding: 20px !important;
+        }
+      }
+    }
+  }
+}

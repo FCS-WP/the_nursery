@@ -1,0 +1,3428 @@
+# Copyright (C) 2025 wptools.io
+# This file is distributed under the GPL v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WCAPF - WooCommerce Ajax Product Filter 4.2.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-ajax-product-filter-dev\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-01-19T19:10:36+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: wc-ajax-product-filter\n"
+
+#. Plugin Name of the plugin
+#: wc-ajax-product-filter.php
+msgid "WCAPF - WooCommerce Ajax Product Filter"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: wc-ajax-product-filter.php
+msgid "https://wptools.io/wc-ajax-product-filter/?utm_source=plugins+listing&utm_medium=wcapf+free&utm_campaign=WCAPF+Pro+Details"
+msgstr ""
+
+#. Description of the plugin
+#: wc-ajax-product-filter.php
+msgid "A plugin to filter WooCommerce products with AJAX request."
+msgstr ""
+
+#. Author of the plugin
+#: wc-ajax-product-filter.php
+msgid "wptools.io"
+msgstr ""
+
+#. Author URI of the plugin
+#: wc-ajax-product-filter.php
+msgid "https://wptools.io?utm_source=plugins+listing&utm_medium=wcapf+free&utm_campaign=Business+Website"
+msgstr ""
+
+#: includes/class-wcapf-admin.php:48
+msgid "Add Filters"
+msgstr ""
+
+#: includes/class-wcapf-admin.php:58
+#: includes/class-wcapf-admin.php:115
+#: build/form.js:1
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Form/FormTabPanel.js:47
+#: src/components/Settings/index.js:311
+#: src/components/TopBar.js:26
+msgid "Settings"
+msgstr ""
+
+#: includes/class-wcapf-admin.php:75
+#: build/form.js:1
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/TopBar.js:66
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: includes/class-wcapf-admin.php:114
+msgid "WCAPF - WooCommerce Ajax Product Filter - Settings"
+msgstr ""
+
+#: includes/class-wcapf-admin.php:158
+#: build/form.js:1
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/TopBar.js:16
+msgid "Forms"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:145
+msgid "Taxonomy"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:150
+#: includes/class-wcapf-api-utils.php:385
+#: includes/class-wcapf-default-data.php:127
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:92
+msgid "Price"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:155
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:96
+msgid "Rating"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:160
+msgid "Product Status"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:165
+msgid "Post Author"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:170
+msgid "Post Meta"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:174
+msgid "Keyword"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:179
+msgid "Sort By"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:185
+msgid "Per Page"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:195
+#: includes/class-wcapf-form-filters-utils.php:150
+#: includes/shortcodes/class-wcapf-active-filters-shortcode.php:26
+msgid "Active Filters"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:200
+msgid "Reset Button"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:205
+msgid "Results Count"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:301
+#: includes/class-wcapf-default-data.php:230
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:65
+msgid "Featured"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:305
+#: includes/class-wcapf-default-data.php:234
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:34
+msgid "On Sale"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:337
+msgid "Post ID"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:341
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:335
+msgid "Author"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:345
+#: build/form.js:1
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: src/components/Form/FormFilters/index.js:71
+#: src/components/Form/ProductQuery.js:104
+#: src/components/ListForms/Table.js:24
+#: src/components/SEORules/Table.js:9
+msgid "Title"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:349
+msgid "Name (Post Slug)"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:353
+#: includes/class-wcapf-api-utils.php:417
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:225
+#: src/components/Form/ProductQuery.js:76
+msgid "Date"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:357
+msgid "Modified"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:361
+msgid "Parent ID"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:365
+msgid "Random Order"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:369
+msgid "Review Count"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:373
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:84
+msgid "Menu Order"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:377
+msgid "Total Sales"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:381
+msgid "Average Rating"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:389
+msgid "Meta Value"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:407
+msgid "Alphabetic"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:412
+msgid "Numeric"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:422
+msgid "DateTime"
+msgstr ""
+
+#: includes/class-wcapf-api-utils.php:427
+msgid "Decimal"
+msgstr ""
+
+#: includes/class-wcapf-default-data.php:117
+msgid "Category"
+msgstr ""
+
+#: includes/class-wcapf-default-data.php:163
+msgid "Any"
+msgstr ""
+
+#: includes/class-wcapf-default-data.php:214
+msgid "Tag"
+msgstr ""
+
+#: includes/class-wcapf-default-data.php:224
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:241
+msgid "Status"
+msgstr ""
+
+#: includes/class-wcapf-field-instance.php:276
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:127
+#: src/components/Form/ProductQuery.js:30
+#: src/components/Form/ProductQuery.js:72
+#: src/components/Form/utils.js:490
+#: src/components/Form/utils.js:599
+msgid "Default"
+msgstr ""
+
+#: includes/class-wcapf-field-instance.php:282
+msgid "All Items"
+msgstr ""
+
+#: includes/class-wcapf-form-filters-utils.php:322
+msgid "This is a reserved key. Please use a different string."
+msgstr ""
+
+#: includes/class-wcapf-form-filters-utils.php:345
+msgid "Post type name can't be used as a filter key, it'll create conflict."
+msgstr ""
+
+#: includes/class-wcapf-form-filters-utils.php:350
+msgid "Taxonomy name can't be used as a filter key, it'll create conflict."
+msgstr ""
+
+#: includes/class-wcapf-form-filters-utils.php:355
+msgid "Please make it unique by adding an underscore."
+msgstr ""
+
+#: includes/class-wcapf-form.php:78
+msgid "The form is empty. Please add some filters by editing the form <a href=\"%s\">here</a>."
+msgstr ""
+
+#: includes/class-wcapf-form.php:90
+msgid "Edit form"
+msgstr ""
+
+#: includes/class-wcapf-form.php:434
+msgid "Search products"
+msgstr ""
+
+#: includes/class-wcapf-frontend-scripts.php:216
+msgid "No options to choose"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:188
+msgid "Today"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:189
+msgid "Yesterday"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:190
+msgid "This week"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:191
+msgid "Last week"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:192
+msgid "This month"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:193
+msgid "Last month"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:194
+msgid "Last 14 days"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:195
+msgid "Last 30 days"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:196
+msgid "Last 90 days"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:197
+msgid "This year"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:198
+msgid "Last year"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:777
+msgid "No results for:"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:787
+msgid "N/A"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:796
+msgid "Sort by:"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:805
+msgid "Keyword:"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:815
+#: includes/class-wcapf-helper.php:853
+#: build/form.js:1
+#: src/components/Form/FormTabPanel.js:43
+msgid "Filters"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:859
+msgid "Clear All"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:864
+msgid "Reset"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:874
+#: src/components/utilsForForm.js:46
+msgid "Submit"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:884
+#: src/components/utilsForForm.js:41
+msgid "Apply"
+msgstr ""
+
+#: includes/class-wcapf-helper.php:1112
+msgid "WCAPF - WooCommerce Ajax Product Filter version %s requires WCAPF - WooCommerce Ajax Product Filter Pro version %s or higher, but you are using %s. The Pro version is currently NOT RUNNING. <a href=\"%s\" target=\"_blank\">Please proceed with the update</a>."
+msgstr ""
+
+#: includes/class-wcapf-post-type.php:54
+msgctxt "Post type general name"
+msgid "Filters"
+msgstr ""
+
+#: includes/class-wcapf-post-type.php:55
+msgctxt "Post type singular name"
+msgid "Filter"
+msgstr ""
+
+#: includes/class-wcapf-post-type.php:66
+msgctxt "Post type general name"
+msgid "Filter Forms"
+msgstr ""
+
+#: includes/class-wcapf-post-type.php:67
+msgctxt "Post type singular name"
+msgid "Filter Form"
+msgstr ""
+
+#: includes/class-wcapf-walker.php:872
+msgid "Expand/Collapse %s"
+msgstr ""
+
+#: includes/class-wcapf-walker.php:973
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:57
+msgid "Search"
+msgstr ""
+
+#: includes/class-wcapf-walker.php:1008
+msgid "+ Show more"
+msgstr ""
+
+#: includes/class-wcapf-walker.php:1013
+msgid "− Show less"
+msgstr ""
+
+#: includes/class-wcapf-walker.php:1020
+msgid "Show/hide all options"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:81
+msgid "Sample form"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:111
+msgid "Nonce verification failed"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:124
+msgid "Permission denied"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:141
+#: includes/hooks/class-wcapf-api.php:388
+#: includes/hooks/class-wcapf-api.php:790
+msgid "Invalid form id"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:783
+msgid "Form deleted successfully"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:786
+msgid "There was a problem deleting the form, please try again."
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:809
+msgid "Filter deleted successfully"
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:812
+msgid "There was a problem deleting the filter, please try again."
+msgstr ""
+
+#: includes/hooks/class-wcapf-api.php:816
+msgid "Invalid filter id"
+msgstr ""
+
+#: includes/hooks/class-wcapf-rating-filter.php:150
+msgid "%d star"
+msgid_plural "%d stars"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/migration/class-wcapf-v4-migration.php:407
+msgid "Default form"
+msgstr ""
+
+#: includes/shortcodes/class-wcapf-filter-form-shortcode.php:61
+msgid "No forms found. <a href=\"%s\">Create a form here</a>."
+msgstr ""
+
+#: includes/shortcodes/class-wcapf-filter-form-shortcode.php:78
+msgid "The form has already been displayed and cannot be shown again. Upgrade to the <a href=\"%s\" target=\"_blank\">Pro version</a> for the ability to use multiple forms on a page."
+msgstr ""
+
+#: includes/shortcodes/class-wcapf-filter-form-shortcode.php:96
+msgid "The free version of the plugin does not support filtering products on singular pages. Upgrade to the <a href=\"%s\" target=\"_blank\">Pro version</a> to unlock this feature."
+msgstr ""
+
+#: includes/widgets/class-wcapf-filter-widget.php:23
+msgid "Display a form to filter products in your store."
+msgstr ""
+
+#: includes/widgets/class-wcapf-filter-widget.php:60
+msgid "No settings are required! The form will be displayed according to the <b>Available on</b> setting."
+msgstr ""
+
+#: templates/menu-item-count.php:16
+msgid "%d product"
+msgid_plural "%d products"
+msgstr[0] ""
+msgstr[1] ""
+
+#: wc-ajax-product-filter.php:122
+msgid "WCAPF - WooCommerce Ajax Product Filter requires WooCommerce. The plugin is currently NOT RUNNING."
+msgstr ""
+
+#: wc-ajax-product-filter.php:125
+msgid "%sWCAPF - WooCommerce Ajax Product Filter can not be activated. %s It requires WooCommerce plugin to be activated. Please activate the WooCommerce plugin first ✌️ %s Back %s"
+msgstr ""
+
+#: wc-ajax-product-filter.php:133
+msgid "WCAPF - WooCommerce Ajax Product Filter requires WooCommerce version %s or higher, but WooCommerce version %s is used on the site. The plugin is currently NOT RUNNING."
+msgstr ""
+
+#: wc-ajax-product-filter.php:139
+msgid "%sWCAPF - WooCommerce Ajax Product Filter can not be activated. %s It requires WooCommerce version %s or higher, but WooCommerce version %s is used on the site. Please upgrade the WooCommerce version first ✌️ %s Back %s"
+msgstr ""
+
+#: wc-ajax-product-filter.php:151
+msgid "WCAPF - WooCommerce Ajax Product Filter requires WordPress version %s or higher, but WordPress version %s is used on the site. The plugin is currently NOT RUNNING."
+msgstr ""
+
+#: wc-ajax-product-filter.php:157
+msgid "%sWCAPF - WooCommerce Ajax Product Filter can not be activated. %s It requires WordPress version %s or higher, but WordPress version %s is used on the site. Please upgrade the WordPress version first ✌️ %s Back %s"
+msgstr ""
+
+#: wc-ajax-product-filter.php:169
+msgid "WCAPF - WooCommerce Ajax Product Filter requires PHP version %s or higher, but PHP version %s is used on the site. The plugin is currently NOT RUNNING."
+msgstr ""
+
+#: wc-ajax-product-filter.php:175
+msgid "%sWCAPF - WooCommerce Ajax Product Filter can not be activated. %s It requires PHP version %s or higher, but PHP version %s is used on the site. Please upgrade the PHP version first ✌️ %s Back %s"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/utils.js:4
+msgid "Please fix the errors below."
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/utils.js:9
+msgid "Filter key is in use by another entity."
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/TopBar.js:72
+msgid "You are on the"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/TopBar.js:80
+msgid "Version"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Form/FormTitle/Title.js:18
+#: src/components/Form/FormTitle/Title.js:22
+#: src/components/Settings/index.js:320
+msgid "Save"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormTitle/Title.js:28
+msgid "Publish"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Modals/PublishModal.js:110
+msgid "Publish Form"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Modals/PublishModal.js:119
+msgid "Widget"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Form/ProductQuery.js:575
+#: src/components/Modals/PublishModal.js:123
+msgid "Shortcode"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Modals/PublishModal.js:130
+msgid "PHP Code"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Modals/PublishModal.js:36
+msgid "If you want to publish using shortcode, just copy code below and use it."
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Modals/PublishModal.js:42
+msgid "If you want to publish using PHP code, just copy code below and use it."
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Modals/PublishModal.js:49
+msgid "Go to the widgets page, add <b>%s</b> widget to the desired area."
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/notices.js:27
+msgid "Copied to clipboard"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Modals/PublishModal.js:88
+msgid "Go to Widgets"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: build/settings.js:1
+#: src/components/Form/FormFilters/Filter.js:325
+#: src/components/ListForms/AddNewModal.js:176
+#: src/components/Modals/ProUpdateModal.js:26
+#: src/components/Modals/PublishModal.js:95
+msgid "Cancel"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:448
+#: src/components/Form/utils.js:637
+msgid "Off"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:452
+#: src/components/Form/utils.js:508
+#: src/components/Form/utils.js:617
+#: src/components/Form/utils.js:641
+msgid "Include"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:858
+#: src/components/Form/utils.js:456
+#: src/components/Form/utils.js:645
+msgid "Exclude"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:463
+msgid "Child of"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:467
+msgid "Parent Only"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:569
+msgid "ASC"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:573
+msgid "DESC"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:657
+msgid "Checkbox"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:661
+#: src/components/Form/utils.js:710
+msgid "Radio"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:665
+#: src/components/Form/utils.js:714
+msgid "Select"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:669
+msgid "Multiselect"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:244
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:255
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:275
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:291
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:305
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:316
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:327
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:338
+#: src/components/Form/utils.js:547
+#: src/components/Form/utils.js:673
+msgid "Label"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:723
+msgid "Range - Slider"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:727
+msgid "Range - Number"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:734
+msgid "Range - Checkbox"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:738
+msgid "Range - Radio"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:742
+msgid "Range - Select"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:746
+msgid "Range - Multiselect"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:750
+msgid "Range - Label"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:761
+msgid "Input - Date"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:765
+msgid "Input - Date Range"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:772
+msgid "Time Period - Checkbox"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:776
+msgid "Time Period - Radio"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:780
+msgid "Time Period - Select"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:784
+msgid "Time Period - Multiselect"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:788
+msgid "Time Period - Label"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/utilsForForm.js:55
+msgid "Slide-out panel on desktop"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/utilsForForm.js:59
+msgid "Slide-out panel on mobile"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/utilsForForm.js:63
+msgid "Slide-out panel on both"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormTitle/index.js:125
+msgid "Filter type is required."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormTitle/index.js:137
+msgid "Meta key is required."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormTitle/index.js:401
+msgid "Form saved successfully"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/utilsForReactSelect.js:101
+msgid "ID: %s"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/utilsForReactSelect.js:212
+msgid "Pro"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/utilsForReactSelect.js:220
+msgid "Components"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/Select.js:41
+msgid "No option found"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:63
+msgid "Filter type can not be changed once it is saved. But you can permanently delete the filter and add a new one."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:68
+msgid "Once a filter key is set, you can not change it from the filter. But you can change the filter keys globally from \"Settings > Filter Keys\" tab."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:92
+msgid "This key is already assigned for this entity and can not be changed from here. But you can change the filter keys globally from \"Settings > Filter Keys\" tab."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:123
+msgid "Filter Title"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:124
+msgid "Give a title to the filter that will appear before the filter options."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:143
+msgid "Filter Type"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:144
+msgid "Determines the entity by which the products will be filtered."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:193
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:695
+msgid "Meta Key"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:194
+msgid "Select the meta key that values will be available as filter options."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:209
+msgid "Value Type"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:210
+msgid "Determines the meta value type."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:216
+msgid "Text"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:220
+msgid "Number"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:242
+msgid "Value is decimal"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:243
+msgid "Enable this if the meta values have decimal places. It'll filter the products more accurately."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:255
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:248
+msgid "Decimal Places"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:259
+msgid "Determines the number of decimal places in meta values."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:275
+msgid "Date Format"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:276
+msgid "Determines the format of the date saved in the database."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:282
+msgid "Timestamp"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:286
+msgid "YYYYMMDD"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:306
+msgid "Filter Key"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:307
+msgid "The unique key that will be used in the URL. Only a-z, 0-9, \"_\" and \"-\" symbols are supported."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:55
+#: src/components/Form/FilterSettings/General.js:326
+msgid "Show title"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:327
+msgid "Enable this to show the title before the active filters."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:108
+#: src/components/Form/FilterSettings/General.js:338
+#: src/components/Form/ProductQuery.js:609
+msgid "Layout"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:339
+msgid "Simple: Show all the active items one by one, Extended: Group the active items by filter type and show them separately with filter title."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:345
+msgid "Simple"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:349
+msgid "Extended"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:360
+msgid "No filter applied message"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:364
+msgid "Show a message when no filter is applied. Leave it empty to not show the active filters when no filter is applied."
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Form/FilterSettings/General.js:387
+#: src/components/Settings/Tabs/General.js:20
+msgid "Always show"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:388
+msgid "Enable this to show the reset button as disabled when no filter is applied."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:410
+msgid "Show conditionally"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/General.js:414
+msgid "Enable this to show the results count only when a filter is applied."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:63
+msgid "List"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:67
+#: src/components/Form/FilterSettings/Appearance/useFields.js:84
+msgid "Inline"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:71
+#: src/components/Form/FilterSettings/Appearance/useFields.js:88
+msgid "Grid"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:109
+msgid "Determines the arrangement of the filter options in the front end."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:123
+#: src/components/Form/ProductQuery.js:732
+msgid "Columns"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:124
+msgid "Specifies the number of columns to be displayed in the grid layout."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:157
+msgid "Multiple Selection"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:158
+msgid "Controls whether users can select multiple options when filtering products."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:217
+msgid "Query Type"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:218
+msgid "Choose \"OR\" to display products matching any selected option or \"AND\" to show products matching all selected options."
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:224
+#: src/components/Settings/Tabs/General.js:13
+#: src/components/VisibilityRules/Rules/AndClause.js:31
+msgid "OR"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:228
+#: src/components/Form/ProductQuery.js:126
+#: src/components/Settings/Tabs/General.js:9
+#: src/components/VisibilityRules/Rules/AndClause.js:35
+msgid "AND"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:265
+msgid "All Items Label"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:266
+msgid "Change the default option label. Leave blank to use the default label."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:323
+msgid "Show count"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:324
+msgid "Determines whether the product count is shown alongside the filter options."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:343
+msgid "Enable tooltip"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:344
+msgid "Display additional information in a tooltip when users hover over the option."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:361
+msgid "Tooltip position"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:362
+msgid "Determines on which side the tooltip will be placed."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:368
+msgid "Top"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:372
+msgid "Right"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:376
+msgid "Bottom"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:380
+msgid "Left"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:397
+msgid "Count in tooltip"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/useFields.js:398
+msgid "Enable this to show the product count in the tooltip."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:93
+#: src/components/Form/FormFilters/index.js:80
+msgid "Display"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:94
+msgid "Determines how the filter options are presented in the front end."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:116
+msgid "Show hierarchy"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:117
+msgid "Whether to show the filter options as hierarchical."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:140
+msgid "Enable hierarchy accordion"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:144
+msgid "Whether to enable accordion for the hierarchy filter options."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:165
+msgid "Enable swatches"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:166
+msgid "Should the filter options be displayed using color/image swatches?"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:180
+msgid "Swatch type"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:181
+msgid "Select the swatch type, color, or image."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:187
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:409
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:430
+msgid "Color"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:194
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:417
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:433
+msgid "Image"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:208
+msgid "Swatch with label"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeText.js:212
+msgid "Enable this to display the label beside the swatch."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeDate.js:65
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:67
+msgid "Display Type"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeDate.js:66
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:68
+msgid "Determines how the filter will be shown in the front end."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:86
+msgid "Display slider values as"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:90
+msgid "Determines how the slider values will be shown in the front end."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:96
+msgid "Input Field"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:100
+msgid "Plain Text"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:120
+msgid "Alignment"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:121
+msgid "Whether to align the text in the center or justified by distributing space between them."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:131
+msgid "Centered"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:135
+msgid "Justified"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:156
+msgid "Input type number"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeNumber.js:157
+msgid "Enable this to hide units and display them as spinbox with up and down arrows."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeDate.js:87
+msgid "Date Display Format"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeDate.js:88
+msgid "Determines how the date will be displayed in the front end."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeDate.js:107
+msgid "Inline Date Inputs"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeDate.js:108
+msgid "Whether to show the date input fields in a single line."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeDate.js:128
+msgid "Use dropdown for Month"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeDate.js:132
+msgid "Whether to show the month dropdown in the date picker."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeDate.js:152
+msgid "Use dropdown for Year"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Appearance/ValueTypeDate.js:156
+msgid "Whether to show the year dropdown in the date picker."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:252
+#: src/components/Form/utils.js:543
+msgid "Value"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:269
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:100
+msgid "Min Value"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:272
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:115
+msgid "Max Value"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:279
+msgid "Secondary Label"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:288
+msgid "Period"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:299
+msgid "Sort by"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:302
+msgid "Direction"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:313
+msgid "Per page"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:324
+msgid "Term"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:706
+msgid "Meta Type"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:754
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:772
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:366
+msgid "ID: %d"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:882
+msgid "Add the options that will be available to the filter."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:891
+msgid "Add the options that will be available to the filter. To show stars in the label, put <code>[star]</code> for filled star, <code>[star-empty]</code> for empty star and <code>[star-half]</code> for half star."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:898
+msgid "Add the options that will be available to the filter. <b>Note:</b> Leave the label and tooltip fields empty if you do not want to override."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:911
+msgid "Filter Options"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:379
+msgid "Tooltip"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:385
+msgid "Color / Image Swatch"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:853
+msgid "Browse Options"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:869
+msgid "Add Option"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptions.js:932
+#: src/components/VisibilityRules/Rules/index.js:59
+msgid "Remove All"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/useFields.js:36
+msgid "Get Options"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:430
+msgid "Automatically"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:434
+msgid "Manual Entry"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:80
+#: src/components/Form/utils.js:494
+#: src/components/Form/utils.js:603
+msgid "ID"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:498
+#: src/components/Form/utils.js:607
+msgid "Name"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:506
+#: src/components/Form/utils.js:558
+#: src/components/Form/utils.js:615
+msgid "Entry"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:513
+msgid "Slug"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:517
+#: src/components/Form/utils.js:551
+#: src/components/Form/utils.js:622
+msgid "Count"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Form/utils.js:536
+#: src/components/Settings/Tabs/LoaderScrollTo.js:27
+#: src/components/Settings/Tabs/ScrollWindowTo.js:16
+msgid "None"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/useFields.js:81
+#: src/components/Form/ProductQuery.js:690
+msgid "Order By"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/useFields.js:82
+msgid "Select the criteria by which you want the items to be ordered."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/useFields.js:99
+msgid "Order Direction"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/useFields.js:100
+msgid "Whether to order options in ascending or descending order."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/useFields.js:116
+msgid "Order Type"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/useFields.js:117
+msgid "Whether to arrange the options in alphabetical or numerical order."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:582
+msgid "Alphabetical"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:586
+msgid "Numerical"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:83
+msgid "Auto-detect min and max"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:87
+msgid "Whether to detect the min and max values from the database."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:104
+msgid "The minimum value that a user can select."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:119
+msgid "The maximum value that a user can select."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:132
+msgid "Step"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:133
+msgid "Determines the size of the increment amount."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:146
+msgid "Gap"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:147
+msgid "Determines the gap between the ranges."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:160
+msgid "Value Prefix"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:161
+msgid "This should be used for the unit, space(s) allowed. Example: $"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:173
+msgid "Value Postfix"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:174
+msgid "This should be used for the unit, space(s) allowed. Example: €"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:186
+msgid "Values Separator"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:187
+msgid "Text to appear between the min and max values, space(s) allowed. Example: –"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:202
+msgid "Text before min value"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:206
+msgid "Text to appear before the min value."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:217
+msgid "Text before max value"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:221
+msgid "Text to appear before the max value."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:234
+msgid "Format Numbers"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:235
+msgid "Enable this if you want to format the numbers."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:261
+msgid "Thousand Separator"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeNumber.js:273
+msgid "Decimal Separator"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:51
+msgid "Please select a taxonomy."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:66
+msgid "Please select the author roles from <strong>Settings > Others</strong> tab."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:84
+msgid "Please select a meta key."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:126
+msgid "There was an error fetching the options."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:291
+msgid "Found %d term for <strong>%s</strong>."
+msgid_plural "Found %d terms for <strong>%s</strong>."
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:302
+msgid "Found %d meta value for <strong>%s</strong>."
+msgid_plural "Found %d meta values for <strong>%s</strong>."
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:313
+msgid "Found %d author for roles of <strong>%s</strong>."
+msgid_plural "Found %d authors for roles of <strong>%s</strong>."
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:488
+msgid "Available Options"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:435
+msgid "No terms found for <strong>%s</strong>."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:443
+msgid "No meta values found for <strong>%s</strong>."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:451
+msgid "No authors found in user roles <strong>%s</strong>."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:387
+msgid "Select All"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:390
+msgid "Clear Selection"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:396
+msgid "Replace current options?"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ManualOptionsModal.js:405
+msgid "Add Options"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/SelectMulti.js:99
+msgid "Start typing to find the role"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/SelectMulti.js:103
+msgid "No roles found"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/SelectMulti.js:105
+msgid "Start typing to find the author"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/SelectMulti.js:109
+msgid "No authors found"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/SelectMulti.js:112
+msgid "Start typing to find the term"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/SelectMulti.js:116
+#: src/components/Form/AvailableOn.js:104
+#: src/components/VisibilityRules/Rules/SelectArchive.js:46
+#: src/components/VisibilityRules/Rules/SelectVisibilityRule.js:75
+msgid "No terms found"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/SelectMulti.js:127
+#: src/components/VisibilityRules/Rules/SelectArchive.js:47
+#: src/components/VisibilityRules/Rules/SelectVisibilityRule.js:65
+msgid "Loading..."
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/SelectMulti.js:197
+msgid "Direct child only"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Field/SelectMulti.js:199
+msgid "Include children"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/PostAuthorOptions.js:47
+#: src/components/Form/FilterSettings/Options/TaxonomyOptions.js:74
+#: src/components/Form/FilterSettings/Options/TaxonomyOptions.js:92
+msgid "Limit Options"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/PostAuthorOptions.js:48
+#: src/components/Form/FilterSettings/Options/TaxonomyOptions.js:75
+#: src/components/Form/FilterSettings/Options/TaxonomyOptions.js:93
+msgid "Limit the filter options."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/TaxonomyOptions.js:112
+msgid "Terms to include"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/TaxonomyOptions.js:113
+msgid "Select the terms that will be available to filter by."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/TaxonomyOptions.js:136
+msgid "Terms to exclude"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/TaxonomyOptions.js:137
+msgid "Select the terms that will be excluded from the filter by options."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/TaxonomyOptions.js:164
+msgid "Parent Term"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/TaxonomyOptions.js:165
+msgid "Select the parent term for which child terms will be available as filter options."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:36
+msgid "From Prefix"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:37
+msgid "Text to appear before the From field."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:47
+msgid "From Postfix"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:48
+msgid "Text to appear after the From field."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:58
+msgid "From Placeholder"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:59
+msgid "The placeholder text to appear for the From field."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:72
+msgid "To Prefix"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:76
+msgid "Text to appear before the To field."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:86
+msgid "To Postfix"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:90
+msgid "Text to appear after the To field."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:100
+msgid "To Placeholder"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/ValueTypeDate.js:104
+msgid "The placeholder text to appear for the To field."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:649
+msgid "Role"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/PostAuthorOptions.js:66
+msgid "Authors to include"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/PostAuthorOptions.js:67
+msgid "Select the authors that will be available to filter by."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/PostAuthorOptions.js:86
+msgid "Authors to exclude"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/PostAuthorOptions.js:87
+msgid "Select the authors that will be excluded from the filter by options."
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Form/FilterSettings/Options/PostAuthorOptions.js:106
+#: src/components/Settings/Tabs/Others.js:274
+msgid "Author Roles"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Options/PostAuthorOptions.js:107
+msgid "Select the roles; matched authors must have at least one of these roles."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/VisibilityRules/utils.js:18
+msgid "Archive"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/VisibilityRules/utils.js:22
+msgid "Page"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/VisibilityRules/utils.js:26
+msgid "User"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/VisibilityRules/utils.js:39
+msgid "Equal"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/VisibilityRules/utils.js:43
+msgid "Not equal"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/VisibilityRules/utils.js:52
+msgid "Active"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/VisibilityRules/utils.js:56
+msgid "Not active"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/VisibilityRules/utils.js:69
+msgid "Logged in"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/VisibilityRules/utils.js:73
+msgid "Logged out"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:56
+msgid "Whether to show the filter title before the filter options."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:72
+msgid "Enable accordion"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:73
+msgid "Place more filters by collapsing the filter options."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:90
+msgid "Accordion state"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:91
+msgid "Determines how the accordion should appear initially."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:799
+msgid "Expanded"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:803
+msgid "Collapsed"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:109
+msgid "Help Text"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:215
+msgid "Search Field"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:216
+msgid "Adds a search field to narrow down the filter options."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:239
+msgid "Placeholder"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:240
+msgid "Change the default placeholder for the search input field."
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Form/FilterSettings/Advanced.js:266
+#: src/components/Form/FilterSettings/Advanced.js:277
+#: src/components/Modals/DeleteModal.js:35
+#: src/components/Modals/DuplicateModal.js:35
+msgid "No"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:270
+#: src/components/Form/FilterSettings/Advanced.js:281
+msgid "Set max height"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:285
+msgid "Soft Limit"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:295
+msgid "Reduce height"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:296
+msgid "Enable this if you want to reduce the filter height."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:355
+msgid "Show in Active Filters"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:359
+msgid "Determines if we show the selected options in active filters."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:375
+msgid "Visibility Rules"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FilterSettings/Advanced.js:376
+msgid "Enable this to control filter display based on page, archive and user role."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormFilters/Filter.js:158
+msgid "There are multiple filters found in the form for the same entity. Please remove the other ones then save the form."
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Form/utils.js:196
+#: src/components/Settings/index.js:37
+msgid "General"
+msgstr ""
+
+#: build/form.js:1
+#: build/settings.js:1
+#: src/components/Form/utils.js:200
+#: src/components/Settings/index.js:45
+msgid "Appearance"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:204
+msgid "Options"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/utils.js:208
+msgid "Advanced"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormFilters/Filter.js:288
+msgid "Close"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormFilters/Filter.js:304
+#: src/components/Form/FormFilters/Filter.js:321
+msgid "Delete"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormFilters/Filter.js:309
+msgid "Are you sure?"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormFilters/NoFiltersFound.js:11
+msgid "You don't have any filters yet."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormFilters/NoFiltersFound.js:18
+msgid "Click on the button below to add your first filter."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormFilters/NoFiltersFound.js:30
+msgid "Add Filter"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormFilters/index.js:74
+#: src/components/Form/ProductQuery.js:649
+msgid "Type"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormFilters/index.js:77
+msgid "Key"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:15
+msgid "Standard shop loop"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:19
+msgid "Products + Pagination"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:23
+msgid "Products only"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:38
+msgid "Best Selling"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:42
+msgid "Top Rated"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:49
+msgid "Visible"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:53
+msgid "Catalog"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:61
+msgid "Hidden"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:88
+msgid "Popularity"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:100
+msgid "Random"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:118
+msgid "IN"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:122
+msgid "NOT IN"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:133
+msgid "= (equals)"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:137
+msgid "!= (not equals)"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:141
+msgid "< (less than)"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:145
+msgid "> (greater than)"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:149
+msgid "<= (less than or equal)"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:153
+msgid ">= (greater than or equal)"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:157
+msgid "like"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:161
+msgid "not like"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:165
+msgid "exists"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/ProductQuery.js:169
+msgid "not exists"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Form/AvailableOn.js:245
+#: src/components/ListForms/Table.js:25
+msgid "Available on"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Form/AvailableOn.js:299
+#: src/components/ListForms/Table.js:84
+msgid "Product archive pages"
+msgstr ""
+
+#: build/form.js:1
+#: build/list-forms.js:1
+#: src/components/Form/AvailableOn.js:327
+#: src/components/ListForms/Table.js:18
+msgid "Determines where you want to show the form to filter the products."
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormSettings.js:138
+msgid "Enable clear filter"
+msgstr ""
+
+#: build/form.js:1
+#: src/components/Form/FormSettings.js:141
+msgid "Whether to show a button in each filter to clear the active options."
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/NoFormsFound.js:67
+msgid "You don't have any forms yet."
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/NoFormsFound.js:71
+msgid "Do you want to create a sample form? Click on the button below."
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/notices.js:42
+msgid "Sample form created successfully"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/NoFormsFound.js:84
+msgid "Create a Sample Form"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: src/components/ListForms/Table.js:26
+#: src/components/SEORules/Table.js:10
+msgid "Actions"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: src/components/ListForms/Table.js:69
+#: src/components/SEORules/Table.js:49
+msgid "(no title)"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/Table.js:167
+msgid "List of Forms"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: src/components/ListForms/Table.js:172
+#: src/components/SEORules/Table.js:146
+msgid "Add New"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: src/components/ListForms/Table.js:136
+#: src/components/SEORules/Table.js:98
+msgid "Showing <b>%d</b> result"
+msgid_plural "Showing <b>%d</b> results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Sidebar.js:10
+msgid "Explore the comprehensive documentation and interactive demos."
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Sidebar.js:15
+msgid "Whether you need technical support, have questions about specific features, or need assistance with custom development, I'm here to help."
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Sidebar.js:20
+msgid "Your feedback is incredibly valuable to me. If you enjoy using my plugin, I kindly ask for your support by leaving a review."
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Sidebar.js:43
+msgid "Need Help Getting Started?"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Sidebar.js:57
+msgid "Documentation"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Sidebar.js:64
+msgid "View Demos"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Sidebar.js:74
+msgid "Support & Questions"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Sidebar.js:84
+msgid "WP Support Forum"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Sidebar.js:91
+msgid "Contact me"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Sidebar.js:100
+msgid "Like the Plugin?"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/Sidebar.js:110
+msgid "Write a review"
+msgstr ""
+
+#: build/list-forms.js:1
+#: build/seo-rules.js:1
+#: build/settings.js:1
+#: src/components/ProFeaturesNotice.js:13
+msgid "Upgrade"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/AddNewModal.js:12
+msgid "The free version supports one form only."
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/AddNewModal.js:203
+msgid "Add Form"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/AddNewModal.js:130
+msgid "Form was created"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/AddNewModal.js:132
+msgid "Now you can add filters and edit the settings of this form."
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/AddNewModal.js:139
+msgid "Maybe Later"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/AddNewModal.js:145
+msgid "Edit Form"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/AddNewModal.js:161
+msgid "Enter form title"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/ListForms/AddNewModal.js:185
+msgid "Next"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/Modals/DeleteModal.js:10
+msgid "Delete Filter?"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/Modals/DeleteModal.js:11
+msgid "This will delete the filter permanently."
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/Modals/DeleteModal.js:16
+msgid "Delete Form?"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/Modals/DeleteModal.js:17
+msgid "This will delete the form permanently."
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/Modals/DeleteModal.js:42
+#: src/components/Modals/DuplicateModal.js:42
+msgid "Yes"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/Modals/DuplicateModal.js:10
+msgid "Duplicate Filter?"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/Modals/DuplicateModal.js:11
+msgid "This will duplicate the filter with all settings."
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/Modals/DuplicateModal.js:16
+msgid "Duplicate Form?"
+msgstr ""
+
+#: build/list-forms.js:1
+#: src/components/Modals/DuplicateModal.js:17
+msgid "This will duplicate the form with all filters and settings."
+msgstr ""
+
+#: build/seo-rules.js:1
+#: src/components/SEORules/Table.js:126
+msgid "SEO Rules are available only at the Pro version."
+msgstr ""
+
+#: build/seo-rules.js:1
+#: src/components/SEORules/Table.js:138
+msgid "List of SEO Rules"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/General.js:24
+msgid "Never show"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/General.js:50
+msgid "Filter Relationships"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/General.js:51
+msgid "The relationship between filters. AND - products shown will match all filters, OR - products shown will match any filters."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/General.js:62
+msgid "Dynamic Product Count"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/General.js:63
+msgid "Whether to update the product count number according to the applied filters."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/General.js:73
+msgid "Options with zero products"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/General.js:77
+msgid "Choose \"Always show\" to gray out filter options or \"Never show\" to hide filter options that have no associated products."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/General.js:102
+msgid "Hide empty filters"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/General.js:103
+msgid "Whether to hide the filters that don't have any options."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/General.js:114
+msgid "Disable Ajax"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/General.js:115
+msgid "Enable this if you want to disable filtering via Ajax."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/FilterKeys.js:11
+msgid "Here you can edit the filter keys globally and change the order of those in the URL."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/FilterKeys.js:154
+msgid "Changing the order of filter keys is a Pro feature."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/FilterKeys.js:168
+msgid "Global filter keys and order"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/FilterKeys.js:173
+msgid "Please create some filters first then come back here."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Miscellaneous.js:23
+msgid "Debug Mode"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Miscellaneous.js:24
+msgid "This will help you to configure the plugin correctly."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Miscellaneous.js:34
+msgid "Disable WCAPF"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Miscellaneous.js:35
+msgid "Check this to disable WCAPF - WooCommerce Ajax Product Filter in the front end for testing purposes."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Miscellaneous.js:45
+msgid "Send anonymous data"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Miscellaneous.js:46
+msgid "Enable this if you agree to send anonymous data to the developer to make the plugin better."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Miscellaneous.js:56
+msgid "Remove Data"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Miscellaneous.js:57
+msgid "Enable this option to remove all data associated with WCAPF - WooCommerce Ajax Product Filter when you delete the plugin via the <b>Plugins</b> page."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:16
+msgid "Style %d"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:76
+msgid "Primary Color"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:77
+msgid "Set a primary color according to your theme. Default is #1C5DA1."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:88
+msgid "Primary Text Color"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:89
+msgid "This color will be used over the primary color for the font color."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:103
+msgid "Stylish checkbox & radio buttons"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:107
+msgid "Enable this if you want stylish checkbox and radio buttons instead of native design."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:117
+msgid "Enable ComboBox"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:118
+msgid "Turns the native select element into a custom select box with improved design and behavior."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:129
+msgid "ComboBox for sorting dropdown"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:133
+msgid "Attach ComboBox for the default sorting dropdown instead of the native select element."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:145
+msgid "Improve native select element"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:149
+msgid "Uncheck this if your theme already implements the design for the native select element."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:160
+msgid "Improve scrollbar"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:161
+msgid "Enable this to improve the scrollbar that appears when max height is applied to a filter."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:171
+msgid "Improve input type text/number"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:175
+msgid "Enable this if you want to use styles from your theme for input type text/number."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:185
+msgid "Hierarchy toggle at the end"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:189
+msgid "Uncheck this to show the hierarchy toggle just after the item label instead of at the end of the item."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:199
+msgid "Number range slider style"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:203
+msgid "Select the number range slider style from the available ones."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:215
+msgid "Star Icon Color"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:216
+msgid "Set the star icon color for the rating filter(not applicable for display type: select, multiselect). Default is #FDA256."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:229
+msgid "FontAwesome for star icons"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:233
+msgid "Enable this if your site loads the FontAwesome icons."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:243
+msgid "Remove focus style"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Appearance.js:244
+msgid "Enable this to remove the focus style from input(text) and dropdown elements."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:26
+msgid "Active Filters on top of products"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:30
+msgid "Enable this to show the active filters on top of the products loop, only works in the standard shop loop."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:40
+msgid "Pagination via Ajax"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:41
+msgid "Whether to enable Ajax to paginate the products. Only applicable when filtering via Ajax."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:51
+msgid "Product sorting via Ajax"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:52
+msgid "Whether to enable Ajax for the default product sorting dropdown. Only applicable when filtering via Ajax."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:62
+msgid "Sorting data in Active Filters"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:66
+msgid "Enable this if you want to show the sort-by data that comes from the default product sorting dropdown in active filters."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:76
+msgid "Use term slug"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:77
+msgid "Whether to use term slug instead of id as the option value."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:87
+msgid "Child terms only"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:88
+msgid "Whether to show only the child terms when viewing a term archive page."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:99
+msgid "Vendor support"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Integration.js:100
+msgid "Enable this to show the store name as the option label in the post-author filter."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/ScrollWindowTo.js:8
+msgid "Results container"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/ScrollWindowTo.js:12
+msgid "Custom element"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/ScrollWindowTo.js:23
+msgid "Desktop only"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/ScrollWindowTo.js:27
+msgid "Mobile only"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/ScrollWindowTo.js:31
+msgid "Desktop and mobile"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/ScrollWindowTo.js:38
+msgid "After updating the results"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/ScrollWindowTo.js:42
+msgid "Immediately"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/ScrollWindowTo.js:72
+msgid "Scroll window to"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/ScrollWindowTo.js:119
+msgid "Determines the scroll behavior."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:16
+msgid "Overlay only"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:20
+msgid "Overlay + Loading Icon"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:72
+msgid "All"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:76
+msgid "Filter"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:80
+msgid "Paginate"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:158
+#: src/components/Settings/Tabs/Others.js:53
+msgid "There are settings available only in the Pro version."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:170
+msgid "These settings are applicable when filtering via ajax."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:179
+msgid "Loading Animation"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:180
+msgid "Whether to show an animation while the results are fetching."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:193
+msgid "Loading Icon"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:194
+msgid "Select the loading icon from the available icons."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:227
+msgid "Icon Size"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:228
+msgid "Adjust the loading icon size in px. Default is 60."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:256
+msgid "Wait Cursor"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:257
+msgid "Enable this to show a wait cursor while the results are fetching."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:271
+msgid "Custom element identifier"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:275
+msgid "Give a valid id/class of the HTML element you want to scroll to."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:305
+msgid "Scroll to top offset"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/LoaderScrollTo.js:309
+msgid "If you have a sticky header or some space that you want to include in the viewport then give the height of those in px."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:60
+msgid "Phrases"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:64
+msgid "Here you can change the phrases shown in the front end. Leave empty to use the default."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:72
+msgid "Keyword filter placeholder"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:82
+msgid "Keyword filter prefix"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:92
+msgid "Search field placeholder"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:99
+msgid "No results text"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:106
+msgid "No options text"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:113
+msgid "Empty filter text"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:120
+msgid "Show more button label"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:127
+msgid "Show less button label"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:162
+msgid "Clear All button label"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:169
+msgid "Reset button label"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:203
+msgid "Sort by prefix"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:221
+msgid "Input Delay"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:222
+msgid "Specify the delay (in milliseconds) before triggering the filter action when the user interacts with the input fields. Default is 300."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:234
+msgid "Pagination container"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:235
+msgid "The css class of the pagination element, supports multiple classes separated by commas. In most cases, you don't need to change this. Applicable when filtering via Ajax."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:259
+msgid "JavaScript after Ajax update"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/Tabs/Others.js:275
+msgid "Users having any of these roles will be available on the <b>Available Options</b> modal of the post-author filter."
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/index.js:41
+msgid "Integration"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/index.js:49
+msgid "Loader & Scroll To"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/index.js:53
+msgid "Filter Keys"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/index.js:57
+msgid "Others"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/index.js:61
+msgid "Miscellaneous"
+msgstr ""
+
+#: build/settings.js:1
+#: src/components/Settings/index.js:235
+msgid "Settings saved successfully"
+msgstr ""
+
+#: src/components/Field/CheckboxMulti.js:14
+#: src/components/VisibilityRules/MediaScreenRules.js:14
+msgid "Mobile"
+msgstr ""
+
+#: src/components/Field/CheckboxMulti.js:20
+#: src/components/VisibilityRules/MediaScreenRules.js:20
+msgid "Tablet"
+msgstr ""
+
+#: src/components/Field/CheckboxMulti.js:26
+#: src/components/VisibilityRules/MediaScreenRules.js:26
+msgid "Desktop"
+msgstr ""
+
+#: src/components/Field/ImagePicker.js:45
+msgid "Select Image"
+msgstr ""
+
+#: src/components/Field/SwatchSize.js:27
+msgid "Width"
+msgstr ""
+
+#: src/components/Field/SwatchSize.js:34
+msgid "Height"
+msgstr ""
+
+#: src/components/Form/AvailableOn.js:100
+msgid "Leave empty to match any term"
+msgstr ""
+
+#: src/components/Form/AvailableOn.js:107
+msgid "Start typing to find the page"
+msgstr ""
+
+#: src/components/Form/AvailableOn.js:111
+#: src/components/VisibilityRules/Rules/SelectVisibilityRule.js:72
+msgid "No pages found"
+msgstr ""
+
+#: src/components/Form/AvailableOn.js:149
+msgid "Already have a product query?"
+msgstr ""
+
+#: src/components/Form/AvailableOn.js:153
+msgid "Enable this if there is already a product query on the selected page. If multiple queries are found on a page, the query with the highest priority will work only."
+msgstr ""
+
+#: src/components/Form/AvailableOn.js:249
+msgid "If you want to reuse a form in multiple locations enable it from \"Settings > Others\" tab."
+msgstr ""
+
+#: src/components/Form/FormPreview.js:14
+msgid "This is for demonstration purposes only"
+msgstr ""
+
+#: src/components/Form/FormPreview.js:42
+msgid "Preview"
+msgstr ""
+
+#: src/components/Form/FormSettings.js:56
+msgid "Priority"
+msgstr ""
+
+#: src/components/Form/FormSettings.js:57
+msgid "Forms with higher priority will be shown first when multiple forms are found on a page."
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:227
+#: src/components/VisibilityRules/Rules/OrClause.js:139
+msgid "Select taxonomy"
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:318
+msgid "Select meta key"
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:556
+msgid "Collapse"
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:557
+msgid "Expand"
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:570
+msgid "Product Query"
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:592
+msgid "Place the shortcode on the selected page to display the products."
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:668
+msgid "Visibility"
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:753
+msgid "Limit"
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:755
+msgid "The number of products to display per page. Put '-1' to display all products."
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:779
+msgid "Tax Query"
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:820
+msgid "Meta Query"
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:869
+msgid "No posts found"
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:888
+msgid "No Post Message"
+msgstr ""
+
+#: src/components/Form/ProductQuery.js:899
+msgid "Leave empty to use default"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:8
+msgid "Need more features?"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:10
+msgid "Upgrade to Pro to unlock all features."
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:16
+msgid "Upgrade Now"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:22
+msgid "Filter by Custom Taxonomy, Post Meta"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:28
+msgid "Filter by Post Property(author/vendor, date, modified)"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:34
+msgid "Sort by, Results per page filters"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:40
+msgid "Display the filter options using color, image"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:46
+msgid "Display the price ranges using checkbox, radio, select, multi-select, label"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:52
+msgid "Display the terms in a hierarchical view and enable accordion on them"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:58
+msgid "Remove filter options that show empty results"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:64
+msgid "Choose the ordering of terms, include/exclude terms, and use term slug as the filter value"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:70
+msgid "Manually create the rating filter options"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:76
+msgid "Hide the filter items using the 'Show more' and 'Show less' buttons"
+msgstr ""
+
+#: src/components/ProFeaturesCard.js:82
+msgid "Set visibility rules to determine when to display the filter"
+msgstr ""
+
+#: src/components/Settings/Tabs/LoaderScrollTo.js:38
+msgid "Custom"
+msgstr ""
+
+#: src/components/Settings/Tabs/LoaderScrollTo.js:209
+msgid "Custom loading icon"
+msgstr ""
+
+#: src/components/Settings/Tabs/LoaderScrollTo.js:213
+msgid "Upload the loading icon. <b>Note:</b> If the SVG icon does not animate, try to upload by disabling sanitization."
+msgstr ""
+
+#: src/components/Settings/Tabs/LoaderScrollTo.js:240
+msgid "Overlay Color"
+msgstr ""
+
+#: src/components/Settings/Tabs/LoaderScrollTo.js:241
+msgid "Adjust the loading overlay color. Default is #FFFFFFCC. <b>Note:</b> There is an alpha channel to control the transparency or opacity of the color."
+msgstr ""
+
+#: src/components/Settings/Tabs/LoaderScrollTo.js:290
+msgid "Scroll on"
+msgstr ""
+
+#: src/components/Settings/Tabs/LoaderScrollTo.js:291
+msgid "Specify the event for which you want to scroll the window."
+msgstr ""
+
+#: src/components/Settings/Tabs/LoaderScrollTo.js:322
+msgid "Disable scroll window animation"
+msgstr ""
+
+#: src/components/Settings/Tabs/LoaderScrollTo.js:326
+msgid "Check this to disable the scroll window animation."
+msgstr ""
+
+#: src/components/Settings/Tabs/Others.js:154
+msgid "Clear button label"
+msgstr ""
+
+#: src/components/Settings/Tabs/Others.js:195
+msgid "Results count markup"
+msgstr ""
+
+#: src/components/Settings/Tabs/Others.js:211
+msgid "Per page prefix"
+msgstr ""
+
+#: src/components/Settings/Tabs/Others.js:246
+msgid "Additional Selectors"
+msgstr ""
+
+#: src/components/Settings/Tabs/Others.js:247
+msgid "If you want to update additional elements give the CSS classes separated by commas. Applicable when filtering via Ajax."
+msgstr ""
+
+#: src/components/Settings/Tabs/Others.js:292
+msgid "Form multiple locations"
+msgstr ""
+
+#: src/components/Settings/Tabs/Others.js:296
+msgid "Enable this if you want to reuse a form in multiple locations."
+msgstr ""
+
+#: src/components/utilsForForm.js:23
+msgid "Vertical"
+msgstr ""
+
+#: src/components/utilsForForm.js:27
+msgid "Horizontal"
+msgstr ""
+
+#: src/components/utilsForForm.js:37
+msgid "Immediate"
+msgstr ""
+
+#: src/components/utilsForForm.js:71
+msgid "Always display"
+msgstr ""
+
+#: src/components/utilsForForm.js:75
+msgid "Click button on desktop"
+msgstr ""
+
+#: src/components/utilsForForm.js:79
+msgid "Click button on mobile"
+msgstr ""
+
+#: src/components/utilsForForm.js:83
+msgid "Click button on both"
+msgstr ""
+
+#: src/components/VisibilityRules/Rules/index.js:23
+msgid "Show the filter if"
+msgstr ""
+
+#: src/components/VisibilityRules/Rules/index.js:51
+msgid "Add Rule Group"
+msgstr ""
+
+#: src/components/VisibilityRules/Rules/OrClause.js:113
+msgid "Select user role"
+msgstr ""
+
+#: src/components/VisibilityRules/Rules/OrClause.js:165
+msgid "Select filter"
+msgstr ""
+
+#: src/components/VisibilityRules/Rules/OrClause.js:209
+#: src/components/VisibilityRules/Rules/SelectVisibilityRule.js:74
+msgid "Leave empty to match any"
+msgstr ""
+
+#: src/components/VisibilityRules/Rules/SelectArchive.js:45
+msgid "Select..."
+msgstr ""
+
+#: src/components/VisibilityRules/Rules/SelectVisibilityRule.js:71
+msgid "Select page"
+msgstr ""

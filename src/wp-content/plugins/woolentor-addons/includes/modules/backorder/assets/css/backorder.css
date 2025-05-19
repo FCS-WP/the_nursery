@@ -1,0 +1,9 @@
+td.product-name .backorder_notification{
+    display: none;
+}
+td.product-name .woolentor-backorder-notification.backorder_notification{
+    display: block;
+}
+dt.variation-woolentor_cart_backorder_availability,.wc-block-components-product-details__woolentor-cart-backorder-availability span.wc-block-components-product-details__name{
+    display: none !important;
+}
