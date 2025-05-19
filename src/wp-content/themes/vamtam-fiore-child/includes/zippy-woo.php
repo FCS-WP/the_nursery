@@ -59,7 +59,7 @@ function plant_combo_shortcode()
     <div id="plant-combo-builder">
         <div class="column-left">
             <div>
-                <!-- Plant Slider-->
+                <!-- Plant Slider -->
                 <div class="slick-slider plant-preview">
                     <?php $plants->rewind_posts();
                     while ($plants->have_posts()) : $plants->the_post(); ?>
@@ -68,6 +68,7 @@ function plant_combo_shortcode()
                         </div>
                     <?php endwhile; ?>
                 </div>
+
                 <!-- Planter Slider -->
                 <div class="slick-slider planter-preview">
                     <?php while ($planters->have_posts()) : $planters->the_post(); ?>
@@ -86,8 +87,9 @@ function plant_combo_shortcode()
                 <?php $index = 0;
                 $plants->rewind_posts();
                 while ($plants->have_posts()) : $plants->the_post();
-                    global $product; ?>
-                    <div class="combo-item" data-type="plant"
+                    global $product;
+                    $hidden_class = $index >= 4 ? 'hidden' : ''; ?>
+                    <div class="combo-item <?= $hidden_class ?>" data-type="plant"
                         data-index="<?= $index++; ?>"
                         data-name="<?php the_title(); ?>"
                         data-price="<?= $product->get_price(); ?>"
@@ -97,14 +99,16 @@ function plant_combo_shortcode()
                     </div>
                 <?php endwhile; ?>
             </div>
+            <button class="show-more" data-target="plants">Show More Plants</button>
 
             <h3>Choose Your Planter</h3>
             <div class="combo-options planters">
                 <?php $index = 0;
                 $planters->rewind_posts();
                 while ($planters->have_posts()) : $planters->the_post();
-                    global $product; ?>
-                    <div class="combo-item" data-type="planter"
+                    global $product;
+                    $hidden_class = $index >= 4 ? 'hidden' : ''; ?>
+                    <div class="combo-item <?= $hidden_class ?>" data-type="planter"
                         data-index="<?= $index++; ?>"
                         data-name="<?php the_title(); ?>"
                         data-price="<?= $product->get_price(); ?>"
@@ -114,6 +118,7 @@ function plant_combo_shortcode()
                     </div>
                 <?php endwhile; ?>
             </div>
+            <button class="show-more" data-target="planters">Show More Planters</button>
 
             <div class="group-total-add-to-cart">
                 <strong>$<span id="combo-total">0.00</span></strong>
@@ -122,9 +127,14 @@ function plant_combo_shortcode()
         </div>
     </div>
 
+    <script>
+       
+    </script>
+
 <?php
     return ob_get_clean();
 }
+
 add_action('wp_ajax_add_to_cart_combo', 'handle_add_to_cart_combo');
 add_action('wp_ajax_nopriv_add_to_cart_combo', 'handle_add_to_cart_combo');
 

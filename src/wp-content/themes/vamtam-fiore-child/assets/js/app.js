@@ -14,6 +14,34 @@ document.addEventListener("DOMContentLoaded", function () {
   showNextBanner();
   setInterval(showNextBanner, 4000);
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const showMoreButtons = document.querySelectorAll(".show-more");
+
+  showMoreButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const targetClass = this.dataset.target;
+      const items = document.querySelectorAll(
+        `.combo-options.${targetClass} .combo-item.hidden`
+      );
+      let shown = 0;
+
+      items.forEach((item) => {
+        if (shown < 4) {
+          item.classList.remove("hidden");
+          shown++;
+        }
+      });
+
+      if (
+        document.querySelectorAll(
+          `.combo-options.${targetClass} .combo-item.hidden`
+        ).length === 0
+      ) {
+        this.style.display = "none";
+      }
+    });
+  });
+});
 
 jQuery(document).ready(function ($) {
   const $plantSlider = $(".plant-preview");

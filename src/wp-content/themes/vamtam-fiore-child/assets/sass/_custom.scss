@@ -186,6 +186,12 @@ $breakpoint-mobile: 767px;
       width: 100%;
     }
   }
+  .combo-item.hidden {
+    display: none;
+  }
+  .show-more{
+    margin: 20px 0;
+  }
 }
 
 .group-total-add-to-cart {
