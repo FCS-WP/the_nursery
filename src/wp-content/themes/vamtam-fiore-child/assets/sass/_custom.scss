@@ -109,7 +109,7 @@ $breakpoint-mobile: 767px;
 
 .slick-slider {
   img {
-    max-height: 350px;
+    max-height: 300px;
     margin: 0 auto;
     object-fit: contain;
 
@@ -175,6 +175,38 @@ $breakpoint-mobile: 767px;
   .column-right {
     h3 {
       margin: 15px 0;
+    }
+    .product-price{
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .product-description{
+      padding: 10px 0;
+    }
+    .show-more{
+      padding: 10px;
+    }
+  }
+  .combo-item {
+    img{
+      width: 80px;
+      height: 80px;
+      overflow: contain;
+    }
+  }
+  .choose-planter{
+    margin-top: 20px;
+  }
+  .group-total-add-to-cart{
+   strong{
+    font-size: 24px;
+    font-weight: bold;
+   }
+  }
+  .current-plant-image{
+    img{
+      height: 300px;
+      object-fit: contain;
     }
   }
 
@@ -277,5 +309,13 @@ $breakpoint-mobile: 767px;
         }
       }
     }
+  }
+}
+.message-added-to-cart{
+  
+  p{
+    padding: 5px 10px;
+    color:white;
+    background: #6a6e49;
   }
 }
