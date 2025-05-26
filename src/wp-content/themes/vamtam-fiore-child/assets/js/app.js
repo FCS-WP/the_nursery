@@ -3,8 +3,8 @@ import "../lib/slick/slick.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const banners = document.querySelectorAll(".custom-title-baner-home");
+  if (banners.length <= 1) return;
   let index = 0;
-
   function showNextBanner() {
     banners.forEach((b) => b.classList.remove("active"));
     banners[index].classList.add("active");
@@ -14,46 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
   showNextBanner();
   setInterval(showNextBanner, 4000);
 });
-document.addEventListener("DOMContentLoaded", function () {
-  const showMoreButtons = document.querySelectorAll(".show-more");
-
-  showMoreButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const targetClass = this.dataset.target;
-      const items = document.querySelectorAll(
-        `.combo-options.${targetClass} .combo-item.hidden`
-      );
-      let shown = 0;
-
-      items.forEach((item) => {
-        if (shown < 4) {
-          item.classList.remove("hidden");
-          shown++;
-        }
-      });
-
-      if (
-        document.querySelectorAll(
-          `.combo-options.${targetClass} .combo-item.hidden`
-        ).length === 0
-      ) {
-        this.style.display = "none";
-      }
-    });
-  });
-});
 
 jQuery(document).ready(function ($) {
   const plantPrice = parseFloat($("#plant-price").text()) || 0;
   const plantID = $("#plant-combo-builder").data("plant-id");
-  const plantName = $(".current-plant-image p strong").text();
 
   let selectedPlanter = null;
 
   const $planterSlider = $(".planter-preview");
 
   $planterSlider.on("init", function () {
-    // Khi slider khởi tạo, active item đầu tiên
     const $firstItem = $(".combo-item[data-type='planter'][data-index='0']");
     $firstItem.addClass("active");
 
@@ -75,23 +45,23 @@ jQuery(document).ready(function ($) {
     slidesToScroll: 1,
   });
 
-  $(".combo-item[data-type='planter']").on("click", function () {
-    $(".combo-item[data-type='planter']").removeClass("active");
-    $(this).addClass("active");
+  // $(".combo-item[data-type='planter']").on("click", function () {
+  //   $(".combo-item[data-type='planter']").removeClass("active");
+  //   $(this).addClass("active");
 
-    selectedPlanter = {
-      name: $(this).data("name"),
-      price: parseFloat($(this).data("price")) || 0,
-      potheight: parseInt($(this).data("potheight")) || 0,
-      product_id: $(this).data("product_id"),
-      index: $(this).data("index"),
-    };
+  //   selectedPlanter = {
+  //     name: $(this).data("name"),
+  //     price: parseFloat($(this).data("price")) || 0,
+  //     potheight: parseInt($(this).data("potheight")) || 0,
+  //     product_id: $(this).data("product_id"),
+  //     index: $(this).data("index"),
+  //   };
 
-    // Sync with slider
-    $planterSlider.slick("slickGoTo", selectedPlanter.index);
+  //   // Sync with slider
+  //   $planterSlider.slick("slickGoTo", selectedPlanter.index);
 
-    updateComboTotal();
-  });
+  //   updateComboTotal();
+  // });
 
   $planterSlider.on("afterChange", function (event, slick, currentSlide) {
     $(".combo-item[data-type='planter']").removeClass("active");
@@ -116,59 +86,84 @@ jQuery(document).ready(function ($) {
       $("#combo-total").text(total.toFixed(2));
     }
   }
-function updateMiniCartQtyIncrementally(addedQty = 1) {
-  const $badge = $(".elementor-button-icon-qty");
+  function updateMiniCartQtyIncrementally(addedQty = 1) {
+    const $badge = $(".elementor-button-icon-qty");
 
-  let currentQty = parseInt($badge.attr("data-counter"), 10);
-  if (isNaN(currentQty)) currentQty = 0;
+    let currentQty = parseInt($badge.attr("data-counter"), 10);
+    if (isNaN(currentQty)) currentQty = 0;
 
-  const newQty = currentQty + addedQty;
+    const newQty = currentQty + addedQty;
 
-  $badge
-    .attr("data-counter", newQty)
-    .text(newQty);
-}
-
-$("#add-to-cart-combo").on("click", function (e) {
-  e.preventDefault();
-
-  if (!selectedPlanter) {
-    $(".combo-options.planters").addClass("shake");
-    setTimeout(() => $(".combo-options.planters").removeClass("shake"), 500);
-    return;
+    $badge.attr("data-counter", newQty).text(newQty);
   }
 
-  const $btn = $(this);
-  $btn.prop("disabled", true).text("Adding...");
+  $("#add-to-cart-combo").on("click", function (e) {
+    e.preventDefault();
 
-  $.ajax({
-    url: "/wp-admin/admin-ajax.php",
-    type: "POST",
-    data: {
-      action: "add_to_cart_combo",
-      plant_id: plantID,
-      planter_id: selectedPlanter.product_id,
-    },
-    success: function (response) {
-      if (response.success) {
-        $(".message-added-to-cart").fadeIn();
-        setTimeout(() => {
-          $(".message-added-to-cart").fadeOut();
-        }, 3000);
+    if (!selectedPlanter) {
+      $(".combo-options.planters").addClass("shake");
+      setTimeout(() => $(".combo-options.planters").removeClass("shake"), 500);
+      return;
+    }
+
+    const $btn = $(this);
+    $btn.prop("disabled", true).text("Adding...");
+
+    $.ajax({
+      url: "/wp-admin/admin-ajax.php",
+      type: "POST",
+      data: {
+        action: "add_to_cart_combo",
+        plant_id: plantID,
+        planter_id: selectedPlanter.product_id,
+      },
+      success: function (response) {
+        if (response.success) {
+          $(".message-added-to-cart").fadeIn();
+          setTimeout(() => {
+            $(".message-added-to-cart").fadeOut();
+          }, 3000);
 
           updateMiniCartQtyIncrementally(2);
-      } else {
-        alert(response.data || "Something went wrong.");
-      }
-    },
-    error: function () {
-      alert("AJAX error, please try again.");
-    },
-    complete: function () {
-      $btn.prop("disabled", false).text("Add To Cart");
-    },
+        } else {
+          alert(response.data || "Something went wrong.");
+        }
+      },
+      error: function () {
+        alert("AJAX error, please try again.");
+      },
+      complete: function () {
+        $btn.prop("disabled", false).text("Add To Cart");
+      },
+    });
   });
-});
 
+  $("#planter-select").on("change", function () {
+    const selectedID = $(this).val();
+    if (!selectedID) return;
 
+    const $matchedItem = $(
+      `.combo-item[data-type='planter'][data-product_id='${selectedID}']`
+    );
+
+    if ($matchedItem.length) {
+      const slickIndex = $matchedItem
+        .closest(".slick-slide")
+        .data("slick-index");
+      $planterSlider.slick("slickGoTo", slickIndex);
+
+      $(".combo-item[data-type='planter']").removeClass("active");
+      $matchedItem.addClass("active");
+
+      selectedPlanter = {
+        name: $matchedItem.data("name"),
+        price: parseFloat($matchedItem.data("price")) || 0,
+        potheight: parseInt($matchedItem.data("potheight")) || 0,
+        product_id: $matchedItem.data("product_id"),
+        index: slickIndex,
+      };
+
+      updateComboTotal();
+    }
+  });
 });

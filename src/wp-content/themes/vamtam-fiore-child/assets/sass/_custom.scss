@@ -95,18 +95,6 @@ $breakpoint-mobile: 767px;
   }
 }
 
-.combo-item {
-  border: 1px solid #ccc;
-  padding: 5px;
-  cursor: pointer;
-  text-align: center;
-
-  &.active {
-    border-color: teal;
-    outline: 2px solid teal;
-  }
-}
-
 .slick-slider {
   img {
     max-height: 300px;
@@ -176,35 +164,28 @@ $breakpoint-mobile: 767px;
     h3 {
       margin: 15px 0;
     }
-    .product-price{
+    .product-price {
       font-size: 24px;
       font-weight: bold;
     }
-    .product-description{
+    .product-description {
       padding: 10px 0;
     }
-    .show-more{
+    .show-more {
       padding: 10px;
     }
   }
-  .combo-item {
-    img{
-      width: 80px;
-      height: 80px;
-      overflow: contain;
-    }
-  }
-  .choose-planter{
+  .choose-planter {
     margin-top: 20px;
   }
-  .group-total-add-to-cart{
-   strong{
-    font-size: 24px;
-    font-weight: bold;
-   }
+  .group-total-add-to-cart {
+    strong {
+      font-size: 24px;
+      font-weight: bold;
+    }
   }
-  .current-plant-image{
-    img{
+  .current-plant-image {
+    img {
       height: 300px;
       object-fit: contain;
     }
@@ -221,7 +202,7 @@ $breakpoint-mobile: 767px;
   .combo-item.hidden {
     display: none;
   }
-  .show-more{
+  .show-more {
     margin: 20px 0;
   }
 }
@@ -311,11 +292,10 @@ $breakpoint-mobile: 767px;
     }
   }
 }
-.message-added-to-cart{
-  
-  p{
+.message-added-to-cart {
+  p {
     padding: 5px 10px;
-    color:white;
+    color: white;
     background: #6a6e49;
   }
 }

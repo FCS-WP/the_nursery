@@ -93,15 +93,30 @@ function plant_combo_shortcode()
                     <?php echo get_the_post_thumbnail($post->ID, 'medium_large'); ?>
                 </div>
 
-                <!-- Planter Slider -->
+                <!-- Planter Slider (optional to remove if not needed anymore) -->
                 <div class="slick-slider planter-preview">
-                    <?php while ($planters->have_posts()) : $planters->the_post();
-                        global $product; ?>
-                        <div>
+                    <?php
+                    $index = 0;
+                    $planters->rewind_posts();
+                    while ($planters->have_posts()) : $planters->the_post();
+                        global $product;
+                        $planter_id = get_the_ID();
+                        $planter_price = $product->get_price();
+                        $planter_name = get_the_title();
+                    ?>
+                        <div class="combo-item"
+                            data-type="planter"
+                            data-name="<?= esc_attr($planter_name); ?>"
+                            data-price="<?= esc_attr($planter_price); ?>"
+                            data-potheight="0"
+                            data-product_id="<?= esc_attr($planter_id); ?>"
+                            data-index="<?= $index; ?>">
                             <?php the_post_thumbnail('medium_large'); ?>
                         </div>
+                        <?php $index++; ?>
                     <?php endwhile; ?>
                 </div>
+
             </div>
         </div>
 
@@ -112,34 +127,39 @@ function plant_combo_shortcode()
                 <p class="product-description"><?= $product->get_short_description() ?></p>
                 <p class="product-price">$<span id="plant-price"><?= number_format($plant_price, 2) ?></span></p>
             </div>
+
             <div class="choose-planter">
-            <h5 >Choose Your Planter</h5>
-            <div class="combo-options planters">
-                <?php $index = 0;
-                $planters->rewind_posts();
-                while ($planters->have_posts()) : $planters->the_post();
-                    global $product;
-                    $hidden_class = $index >= 4 ? 'hidden' : '';
-                    $planter_price = $product->get_price(); ?>
-                    <div class="combo-item <?= $hidden_class ?>" data-type="planter"
-                        data-index="<?= $index++; ?>"
-                        data-name="<?php the_title(); ?>"
-                        data-price="<?= $planter_price ?>"
-                        data-product_id="<?= get_the_ID(); ?>">
-                        <?php the_post_thumbnail('thumbnail'); ?>
-                        <p><strong>$<?= number_format($planter_price, 2) ?></strong></p>
-                    </div>
-                <?php endwhile; ?>
+                <h5>Choose Your Planter</h5>
+                <select id="planter-select">
+                    <option value="" data-price="0">-- Select a Planter --</option>
+                    <?php
+                    $planters->rewind_posts();
+                    while ($planters->have_posts()) : $planters->the_post();
+                        global $product;
+                        $planter_price = $product->get_price();
+                        $planter_id = get_the_ID();
+                    ?>
+                        <option
+                            value="<?= $planter_id; ?>"
+                            data-price="<?= $planter_price ?>"
+                            data-product_id="<?= $planter_id; ?>">
+                            <?= get_the_title(); ?> - $<?= number_format($planter_price, 2) ?>
+                        </option>
+                    <?php endwhile; ?>
+                </select>
+
             </div>
+
+            <div class="message-added-to-cart" style="display: none;">
+                <p>Combo added to cart successfully!</p>
             </div>
-            <button class="show-more" data-target="planters">Show More</button>
-            <div class="message-added-to-cart" style="display: none;"><p>Combo added to cart successfully!</p></div>
             <div class="group-total-add-to-cart">
                 <strong>Total: $<span id="combo-total"><?= number_format($plant_price, 2) ?></span></strong>
                 <a href="#" class="button" id="add-to-cart-combo">Add To Cart</a>
             </div>
         </div>
     </div>
+
 <?php
     wp_reset_postdata();
     return ob_get_clean();
