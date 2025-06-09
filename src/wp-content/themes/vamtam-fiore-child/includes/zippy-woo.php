@@ -49,7 +49,6 @@ function handle_add_to_cart_combo()
         wp_send_json_error('Invalid product selection.');
     }
 
-    // Add both to cart
     WC()->cart->add_to_cart($plant_id);
     WC()->cart->add_to_cart($planter_id);
 
@@ -78,89 +77,111 @@ function plant_combo_shortcode()
     $plant_price = $product->get_price();
     $plant_title = get_the_title();
 
-    // Get all planters
-    $planters = new WP_Query([
-        'post_type' => 'product',
-        'posts_per_page' => -1,
-        'product_cat' => 'large-planters'
-    ]);
+    // Get ACF repeater field
+    $product_combos = get_field('products_combo', $post->ID);
+    if (empty($product_combos)) {
+        return '<p>No combo planters available for this plant.</p>';
+    }
 ?>
-    <div id="plant-combo-builder" data-plant-id="<?= $plant_id ?>" data-plant-price="<?= $plant_price ?>">
+    <div id="plant-combo-builder" data-plant-id="<?= esc_attr($plant_id) ?>" data-plant-price="<?= esc_attr($plant_price) ?>">
         <div class="column-left">
-            <div>
-                <!-- Current Plant Thumbnail -->
-                <div class="current-plant-image">
-                    <?php echo get_the_post_thumbnail($post->ID, 'medium_large'); ?>
-                </div>
 
-                <!-- Planter Slider (optional to remove if not needed anymore) -->
-                <div class="slick-slider planter-preview">
-                    <?php
-                    $index = 0;
-                    $planters->rewind_posts();
-                    while ($planters->have_posts()) : $planters->the_post();
-                        global $product;
-                        $planter_id = get_the_ID();
-                        $planter_price = $product->get_price();
-                        $planter_name = get_the_title();
-                    ?>
-                        <div class="combo-item"
-                            data-type="planter"
-                            data-name="<?= esc_attr($planter_name); ?>"
-                            data-price="<?= esc_attr($planter_price); ?>"
-                            data-potheight="0"
-                            data-product_id="<?= esc_attr($planter_id); ?>"
-                            data-index="<?= $index; ?>">
-                            <?php the_post_thumbnail('medium_large'); ?>
-                        </div>
-                        <?php $index++; ?>
-                    <?php endwhile; ?>
-                </div>
+            <!-- Planter Slider -->
+            <div class="slick-slider planter-preview">
 
+                <?php foreach ($product_combos as $index => $combo) :
+                    $planter_product = $combo['product_option'];
+                    $image = $combo['image_product'];
+                    if (!$planter_product instanceof WP_Post) continue;
+
+                    $planter_id = $planter_product->ID;
+                    $planter = wc_get_product($planter_id);
+                    if (!$planter) continue;
+
+                    $planter_price = $planter->get_price();
+                    $planter_name = $planter->get_name();
+                ?>
+                    <div class="combo-item"
+                        data-type="planter"
+                        data-name="<?= esc_attr($planter_name); ?>"
+                        data-price="<?= esc_attr($planter_price); ?>"
+                        data-potheight="0"
+                        data-product_id="<?= esc_attr($planter_id); ?>"
+                        data-index="<?= esc_attr($index); ?>">
+                        <?php if ($image): ?>
+                            <img src="<?= esc_url($image['url']); ?>" alt="<?= esc_attr($planter_name); ?>">
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
             </div>
+            <div class="product-gallery-images">
+                <?php
+                $attachment_ids = $product->get_gallery_image_ids();
+                foreach ($attachment_ids as $attachment_id) {
+                    $gallery_img_url = wp_get_attachment_image_url($attachment_id, 'medium_large');
+                    $full_img_url = wp_get_attachment_url($attachment_id);
+                    echo '<div class="stale-image">';
+                    echo '<a data-fancybox="gallerys" href="' . esc_url($full_img_url) . '">';
+                    echo '<img src="' . esc_url($gallery_img_url) . '" alt="Gallery image">';
+                    echo '</a>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+
         </div>
 
         <!-- Selections -->
         <div class="column-right">
             <div>
-                <h3 class="product-title"><?= $plant_title ?></h3>
-                <p class="product-description"><?= $product->get_short_description() ?></p>
-                <p class="product-price">$<span id="plant-price"><?= number_format($plant_price, 2) ?></span></p>
+                <h3 class="product-title"><?= esc_html($plant_title); ?></h3>
+                <p class="product-description"><?= $product->get_short_description(); ?></p>
+                <p class="product-price">$<span id="plant-price"><?= number_format($plant_price, 2); ?></span></p>
             </div>
 
             <div class="choose-planter">
                 <h5>Choose Your Planter</h5>
                 <select id="planter-select">
                     <option value="" data-price="0">-- Select a Planter --</option>
-                    <?php
-                    $planters->rewind_posts();
-                    while ($planters->have_posts()) : $planters->the_post();
-                        global $product;
-                        $planter_price = $product->get_price();
-                        $planter_id = get_the_ID();
+                    <?php foreach ($product_combos as $combo) :
+                        $planter_product = $combo['product_option'];
+                        if (!$planter_product instanceof WP_Post) continue;
+
+                        $planter_id = $planter_product->ID;
+                        $planter = wc_get_product($planter_id);
+                        if (!$planter) continue;
+
+                        $planter_price = $planter->get_price();
+                        $planter_name = $planter->get_name();
                     ?>
                         <option
-                            value="<?= $planter_id; ?>"
-                            data-price="<?= $planter_price ?>"
-                            data-product_id="<?= $planter_id; ?>">
-                            <?= get_the_title(); ?> - $<?= number_format($planter_price, 2) ?>
+                            value="<?= esc_attr($planter_id); ?>"
+                            data-price="<?= esc_attr($planter_price); ?>"
+                            data-product_id="<?= esc_attr($planter_id); ?>">
+                            <?= esc_html($planter_name); ?> - $<?= number_format($planter_price, 2); ?>
                         </option>
-                    <?php endwhile; ?>
+                    <?php endforeach; ?>
                 </select>
-
             </div>
 
             <div class="message-added-to-cart" style="display: none;">
                 <p>Combo added to cart successfully!</p>
             </div>
             <div class="group-total-add-to-cart">
-                <strong>Total: $<span id="combo-total"><?= number_format($plant_price, 2) ?></span></strong>
+                <strong>Total: $<span id="combo-total"><?= number_format($plant_price, 2); ?></span></strong>
                 <a href="#" class="button" id="add-to-cart-combo">Add To Cart</a>
             </div>
         </div>
     </div>
 
 <?php
-    wp_reset_postdata();
     return ob_get_clean();
 }
+function enqueue_fancybox_assets() {
+    if (is_product()) {
+        // Fancybox CSS & JS (v4+)
+        wp_enqueue_style('fancybox-css', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css');
+        wp_enqueue_script('fancybox-js', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js', array('jquery'), null, true);
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_fancybox_assets');

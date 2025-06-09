@@ -22,19 +22,11 @@ jQuery(document).ready(function ($) {
   let selectedPlanter = null;
 
   const $planterSlider = $(".planter-preview");
+  const $select = $("#planter-select");
 
   $planterSlider.on("init", function () {
-    const $firstItem = $(".combo-item[data-type='planter'][data-index='0']");
-    $firstItem.addClass("active");
-
-    selectedPlanter = {
-      name: $firstItem.data("name"),
-      price: parseFloat($firstItem.data("price")) || 0,
-      potheight: parseInt($firstItem.data("potheight")) || 0,
-      product_id: $firstItem.data("product_id"),
-      index: 0,
-    };
-
+    $select.val("");
+    updateSelectClass();
     updateComboTotal();
   });
 
@@ -45,39 +37,48 @@ jQuery(document).ready(function ($) {
     slidesToScroll: 1,
   });
 
-  // $(".combo-item[data-type='planter']").on("click", function () {
-  //   $(".combo-item[data-type='planter']").removeClass("active");
-  //   $(this).addClass("active");
-
-  //   selectedPlanter = {
-  //     name: $(this).data("name"),
-  //     price: parseFloat($(this).data("price")) || 0,
-  //     potheight: parseInt($(this).data("potheight")) || 0,
-  //     product_id: $(this).data("product_id"),
-  //     index: $(this).data("index"),
-  //   };
-
-  //   // Sync with slider
-  //   $planterSlider.slick("slickGoTo", selectedPlanter.index);
-
-  //   updateComboTotal();
-  // });
-
   $planterSlider.on("afterChange", function (event, slick, currentSlide) {
-    $(".combo-item[data-type='planter']").removeClass("active");
-    const $item = $(
-      `.combo-item[data-type='planter'][data-index='${currentSlide}']`
-    ).addClass("active");
+    $(".combo-item").removeClass("active");
+
+    const $currentItem = $(
+      ".slick-slide[data-slick-index='" + currentSlide + "']"
+    ).find(".combo-item");
+    $currentItem.addClass("active");
+
+    const isDefault = $currentItem.data("index") == -1;
 
     selectedPlanter = {
-      name: $item.data("name"),
-      price: parseFloat($item.data("price")) || 0,
-      potheight: parseInt($item.data("potheight")) || 0,
-      product_id: $item.data("product_id"),
-      index: currentSlide,
+      name: $currentItem.data("name"),
+      price: parseFloat($currentItem.data("price")) || 0,
+      potheight: parseInt($currentItem.data("potheight")) || 0,
+      product_id: $currentItem.data("product_id"),
+      index: $currentItem.data("index"),
     };
 
+    $select.val(isDefault ? "" : selectedPlanter.product_id);
+    updateSelectClass();
     updateComboTotal();
+  });
+
+  $select.on("change", function () {
+    const selectedID = $(this).val();
+
+    if (!selectedID) {
+      const $defaultItem = $(".combo-item[data-index='-1']");
+      const slickIndex = $defaultItem
+        .closest(".slick-slide")
+        .data("slick-index");
+      $planterSlider.slick("slickGoTo", slickIndex);
+      return;
+    }
+
+    const $matchedItem = $(`.combo-item[data-product_id='${selectedID}']`);
+    if ($matchedItem.length) {
+      const slickIndex = $matchedItem
+        .closest(".slick-slide")
+        .data("slick-index");
+      $planterSlider.slick("slickGoTo", slickIndex);
+    }
   });
 
   function updateComboTotal() {
@@ -86,21 +87,24 @@ jQuery(document).ready(function ($) {
       $("#combo-total").text(total.toFixed(2));
     }
   }
+
   function updateMiniCartQtyIncrementally(addedQty = 1) {
     const $badge = $(".elementor-button-icon-qty");
-
     let currentQty = parseInt($badge.attr("data-counter"), 10);
     if (isNaN(currentQty)) currentQty = 0;
-
     const newQty = currentQty + addedQty;
-
     $badge.attr("data-counter", newQty).text(newQty);
+  }
+
+  function updateSelectClass() {
+    $select.find("option").removeClass("selected");
+    $select.find("option:selected").addClass("selected");
   }
 
   $("#add-to-cart-combo").on("click", function (e) {
     e.preventDefault();
 
-    if (!selectedPlanter) {
+    if (!selectedPlanter || selectedPlanter.product_id === "") {
       $(".combo-options.planters").addClass("shake");
       setTimeout(() => $(".combo-options.planters").removeClass("shake"), 500);
       return;
@@ -123,7 +127,6 @@ jQuery(document).ready(function ($) {
           setTimeout(() => {
             $(".message-added-to-cart").fadeOut();
           }, 3000);
-
           updateMiniCartQtyIncrementally(2);
         } else {
           alert(response.data || "Something went wrong.");
@@ -137,33 +140,16 @@ jQuery(document).ready(function ($) {
       },
     });
   });
+  if (window.Fancybox) {
+    Fancybox.destroy();
 
-  $("#planter-select").on("change", function () {
-    const selectedID = $(this).val();
-    if (!selectedID) return;
-
-    const $matchedItem = $(
-      `.combo-item[data-type='planter'][data-product_id='${selectedID}']`
-    );
-
-    if ($matchedItem.length) {
-      const slickIndex = $matchedItem
-        .closest(".slick-slide")
-        .data("slick-index");
-      $planterSlider.slick("slickGoTo", slickIndex);
-
-      $(".combo-item[data-type='planter']").removeClass("active");
-      $matchedItem.addClass("active");
-
-      selectedPlanter = {
-        name: $matchedItem.data("name"),
-        price: parseFloat($matchedItem.data("price")) || 0,
-        potheight: parseInt($matchedItem.data("potheight")) || 0,
-        product_id: $matchedItem.data("product_id"),
-        index: slickIndex,
-      };
-
-      updateComboTotal();
-    }
-  });
+    Fancybox.bind("[data-fancybox='gallery']", {
+      Thumbs: true,
+      Toolbar: true,
+      animated: true,
+      Carousel: {
+        transition: "slide",
+      },
+    });
+  }
 });
