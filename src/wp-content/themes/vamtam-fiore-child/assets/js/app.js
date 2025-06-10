@@ -1,5 +1,6 @@
 import { ajax } from "jquery";
 import "../lib/slick/slick.js";
+import "../lib/fancybox/jquery.fancybox.min.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const banners = document.querySelectorAll(".custom-title-baner-home");
@@ -111,6 +112,8 @@ jQuery(document).ready(function ($) {
     }
 
     const $btn = $(this);
+    const giftId = $("#gift-select").val(); // Lấy gift_id từ dropdown
+
     $btn.prop("disabled", true).text("Adding...");
 
     $.ajax({
@@ -120,6 +123,7 @@ jQuery(document).ready(function ($) {
         action: "add_to_cart_combo",
         plant_id: plantID,
         planter_id: selectedPlanter.product_id,
+        gift_id: giftId || 0, // Nếu không chọn gift thì gửi 0
       },
       success: function (response) {
         if (response.success) {
@@ -127,7 +131,9 @@ jQuery(document).ready(function ($) {
           setTimeout(() => {
             $(".message-added-to-cart").fadeOut();
           }, 3000);
-          updateMiniCartQtyIncrementally(2);
+
+          const qty = giftId ? 3 : 2;
+          updateMiniCartQtyIncrementally(qty);
         } else {
           alert(response.data || "Something went wrong.");
         }
@@ -140,16 +146,4 @@ jQuery(document).ready(function ($) {
       },
     });
   });
-  if (window.Fancybox) {
-    Fancybox.destroy();
-
-    Fancybox.bind("[data-fancybox='gallery']", {
-      Thumbs: true,
-      Toolbar: true,
-      animated: true,
-      Carousel: {
-        transition: "slide",
-      },
-    });
-  }
 });

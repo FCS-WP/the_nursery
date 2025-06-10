@@ -313,14 +313,14 @@ $breakpoint-mobile: 767px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  .stale-image {
+  .stale-images {
     img {
       height: 200px;
       object-fit: contain;
     }
   }
 }
-#planter-select {
+#planter-select ,#gift-select {
   width: 100%;
   background-color: white;
   border: 1px solid #ccc;
@@ -345,4 +345,7 @@ $breakpoint-mobile: 767px;
 #add-to-cart-combo{
   width: 60%;
   text-align: center;
+}
+.message-added-to-cart{
+  margin: 10px 0;
 }
