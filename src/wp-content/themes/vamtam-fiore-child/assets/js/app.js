@@ -95,6 +95,9 @@ jQuery(document).ready(function ($) {
     if (isNaN(currentQty)) currentQty = 0;
     const newQty = currentQty + addedQty;
     $badge.attr("data-counter", newQty).text(newQty);
+
+    const $itemCount = $(".item-count");
+    $itemCount.text(`(${newQty})`);
   }
 
   function updateSelectClass() {
@@ -112,7 +115,7 @@ jQuery(document).ready(function ($) {
     }
 
     const $btn = $(this);
-    const giftId = $("#gift-select").val(); // Lấy gift_id từ dropdown
+    const giftId = $("#gift-select").val();
 
     $btn.prop("disabled", true).text("Adding...");
 
@@ -123,7 +126,7 @@ jQuery(document).ready(function ($) {
         action: "add_to_cart_combo",
         plant_id: plantID,
         planter_id: selectedPlanter.product_id,
-        gift_id: giftId || 0, // Nếu không chọn gift thì gửi 0
+        gift_id: giftId || 0,
       },
       success: function (response) {
         if (response.success) {
@@ -134,10 +137,22 @@ jQuery(document).ready(function ($) {
 
           const qty = giftId ? 3 : 2;
           updateMiniCartQtyIncrementally(qty);
+
+          // Cập nhật mini cart bằng tay
+          $.post("/?wc-ajax=get_refreshed_fragments", function (data) {
+            if (data && data.fragments) {
+              $.each(data.fragments, function (key, value) {
+                $(key).replaceWith(value);
+              });
+
+              $(document.body).trigger("wc_fragments_refreshed");
+            }
+          });
         } else {
           alert(response.data || "Something went wrong.");
         }
       },
+
       error: function () {
         alert("AJAX error, please try again.");
       },
