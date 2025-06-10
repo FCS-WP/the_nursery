@@ -27,10 +27,10 @@ class Zippy_Admin
 
 		add_action('admin_init', [$this, 'hide_admin_page_of_plugin'], 99);
 
-		add_filter('acf/settings/show_admin', [$this, 'hide_acf_options_menu']);
+		// add_filter('acf/settings/show_admin', [$this, 'hide_acf_options_menu']);
 
-		// hide site setting
-		add_action('admin_init', [$this, 'hide_acf_options_menu'], 99);
+		// // hide site setting
+		// add_action('admin_init', [$this, 'hide_acf_options_menu'], 99);
 
 
 		/*  Disable All Update Notifications with Code  */
