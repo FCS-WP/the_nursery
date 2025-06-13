@@ -104,6 +104,21 @@ jQuery(document).ready(function ($) {
     $select.find("option").removeClass("selected");
     $select.find("option:selected").addClass("selected");
   }
+  $(".accordion-header").on("click", function () {
+    var $header = $(this);
+    var $content = $header.next(".accordion-content");
+    var $icon = $header.find(".accordion-icon");
+
+    $content.slideToggle(200);
+
+    if ($icon.text() === "+") {
+      $icon.text("-");
+      $icon.addClass("minus").removeClass("plus");
+    } else {
+      $icon.text("+");
+      $icon.addClass("plus").removeClass("minus");
+    }
+  });
 
   $("#add-to-cart-combo").on("click", function (e) {
     e.preventDefault();
