@@ -125,21 +125,6 @@ function plant_combo_shortcode($atts)
                     </div>
                 <?php endforeach; ?>
             </div>
-            <div class="product-gallery-images">
-                <?php
-                $attachment_ids = $product->get_gallery_image_ids();
-                foreach ($attachment_ids as $attachment_id) {
-                    $gallery_img_url = wp_get_attachment_image_url($attachment_id, 'medium_large');
-                    $full_img_url = wp_get_attachment_url($attachment_id);
-                    echo '<div class="stale-images">';
-                    echo '<a data-fancybox="gallery-1" href="' . esc_url($full_img_url) . '">';
-                    echo '<img src="' . esc_url($gallery_img_url) . '" alt="Gallery image">';
-                    echo '</a>';
-                    echo '</div>';
-                }
-                ?>
-            </div>
-
         </div>
 
         <!-- === RIGHT COLUMN === -->
@@ -150,9 +135,84 @@ function plant_combo_shortcode($atts)
                 $<span id="plant-price"><?= number_format($plant_price, 2); ?></span>
             </p>
 
-            <div class="product-description">
-                <?= apply_filters('woocommerce_short_description', $product->get_description()); ?>
+
+            <!-- Planter Select -->
+            <div class="choose-planter">
+                <label>Choose Your Planter</label>
+                <select id="planter-select">
+                    <option value="">-- Select a Planter --</option>
+                    <?php foreach ($combos as $combo):
+                        $planter_product = $combo['product_option'];
+                        if (!$planter_product instanceof WP_Post) continue;
+
+                        $planter_id = $planter_product->ID;
+                        $planter = wc_get_product($planter_id);
+                        if (!$planter) continue;
+
+                        $planter_name = $planter->get_name();
+                        $planter_price = $planter->get_price();
+                    ?>
+                        <option value="<?= esc_attr($planter_id); ?>">
+                            <?= esc_html($planter_name); ?> - $<?= number_format($planter_price, 2); ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
             </div>
+
+            <!-- Gift Select -->
+            <div class="choose-gift">
+                <label>Choose a Gift</label>
+                <select id="gift-select" name="gift_id">
+                    <option value="">-- Select a Gift --</option>
+                    <?php
+                    $gift_args = [
+                        'post_type'      => 'product',
+                        'posts_per_page' => -1,
+                        'post_status'    => 'publish',
+                        'tax_query'      => [
+                            [
+                                'taxonomy' => 'product_cat',
+                                'field'    => 'slug',
+                                'terms'    => sanitize_title($atts['gift_category']),
+                            ],
+                        ],
+                    ];
+
+                    $gift_query = new WP_Query($gift_args);
+                    if ($gift_query->have_posts()):
+                        while ($gift_query->have_posts()):
+                            $gift_query->the_post();
+                            $gift = wc_get_product(get_the_ID());
+                            if (!$gift) continue;
+                    ?>
+                            <option value="<?= esc_attr($gift->get_id()); ?>">
+                                <?= esc_html($gift->get_name()); ?> - $<?= number_format($gift->get_price(), 2); ?>
+                            </option>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    endif;
+                    ?>
+                </select>
+            </div>
+
+            <div class="message-added-to-cart" style="display: none;">
+                <p>Combo added to cart successfully!</p>
+            </div>
+            <div class="group-total-add-to-cart">
+                <p>Total: $<span id="combo-total"><?= number_format($plant_price, 2); ?></span></p>
+                <a href="#" class="button" id="add-to-cart-combo">Add To Cart</a>
+            </div>
+            <div class="line"></div>
+            <div class="accordion-wrapper product-information">
+                <div class="accordion-header">
+                    <span>Mô tả sản phẩm</span> <span class="accordion-icon minus ">-</span>
+                </div>
+                <div class="accordion-content">
+                    <?= apply_filters('woocommerce_short_description', $product->get_description()); ?>
+                </div>
+            </div>
+            <div class="line"></div>
             <?php
             $width = $product->get_width();
             $height = $product->get_height(); ?>
@@ -160,76 +220,23 @@ function plant_combo_shortcode($atts)
                 <p><strong>Size:</strong></p>
                 <p>Width: ~<?= $width ?>cm</p>
                 <p>Height: ~<?= $height ?>cm</p>
-
-                <!-- Planter Select -->
-                <div class="choose-planter">
-                    <h5>Choose Your Planter</h5>
-                    <select id="planter-select">
-                        <option value="">-- Select a Planter --</option>
-                        <?php foreach ($combos as $combo):
-                            $planter_product = $combo['product_option'];
-                            if (!$planter_product instanceof WP_Post) continue;
-
-                            $planter_id = $planter_product->ID;
-                            $planter = wc_get_product($planter_id);
-                            if (!$planter) continue;
-
-                            $planter_name = $planter->get_name();
-                            $planter_price = $planter->get_price();
-                        ?>
-                            <option value="<?= esc_attr($planter_id); ?>">
-                                <?= esc_html($planter_name); ?> - $<?= number_format($planter_price, 2); ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-
-                <!-- Gift Select -->
-                <div class="choose-gift">
-                    <h5>Choose a Gift</h5>
-                    <select id="gift-select" name="gift_id">
-                        <option value="">-- Select a Gift --</option>
-                        <?php
-                        $gift_args = [
-                            'post_type'      => 'product',
-                            'posts_per_page' => -1,
-                            'post_status'    => 'publish',
-                            'tax_query'      => [
-                                [
-                                    'taxonomy' => 'product_cat',
-                                    'field'    => 'slug',
-                                    'terms'    => sanitize_title($atts['gift_category']),
-                                ],
-                            ],
-                        ];
-
-                        $gift_query = new WP_Query($gift_args);
-                        if ($gift_query->have_posts()):
-                            while ($gift_query->have_posts()):
-                                $gift_query->the_post();
-                                $gift = wc_get_product(get_the_ID());
-                                if (!$gift) continue;
-                        ?>
-                                <option value="<?= esc_attr($gift->get_id()); ?>">
-                                    <?= esc_html($gift->get_name()); ?> - $<?= number_format($gift->get_price(), 2); ?>
-                                </option>
-                        <?php
-                            endwhile;
-                            wp_reset_postdata();
-                        endif;
-                        ?>
-                    </select>
-                </div>
-
-                <div class="message-added-to-cart" style="display: none;">
-                    <p>Combo added to cart successfully!</p>
-                </div>
-                <div class="group-total-add-to-cart">
-                    <strong>Total: $<span id="combo-total"><?= number_format($plant_price, 2); ?></span></strong>
-                    <a href="#" class="button" id="add-to-cart-combo">Add To Cart</a>
-                </div>
             </div>
         </div>
-    <?php
+    </div>
+    <div class="product-gallery-images">
+        <?php
+        $attachment_ids = $product->get_gallery_image_ids();
+        foreach ($attachment_ids as $attachment_id) {
+            $gallery_img_url = wp_get_attachment_image_url($attachment_id, 'medium_large');
+            $full_img_url = wp_get_attachment_url($attachment_id);
+            echo '<div class="stale-images">';
+            echo '<a data-fancybox="gallery-1" href="' . esc_url($full_img_url) . '">';
+            echo '<img src="' . esc_url($gallery_img_url) . '" alt="Gallery image">';
+            echo '</a>';
+            echo '</div>';
+        }
+        ?>
+    </div>
+<?php
     return ob_get_clean();
 }
