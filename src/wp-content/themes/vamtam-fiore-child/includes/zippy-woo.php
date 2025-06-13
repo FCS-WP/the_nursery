@@ -206,7 +206,7 @@ function plant_combo_shortcode($atts)
             <div class="line"></div>
             <div class="accordion-wrapper product-information">
                 <div class="accordion-header">
-                    <span>Mô tả sản phẩm</span> <span class="accordion-icon minus ">-</span>
+                    <span>Delivery Information</span> <span class="accordion-icon minus ">-</span>
                 </div>
                 <div class="accordion-content">
                     <?= apply_filters('woocommerce_short_description', $product->get_description()); ?>
