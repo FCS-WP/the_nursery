@@ -131,6 +131,7 @@ jQuery(document).ready(function ($) {
 
     const $btn = $(this);
     const giftId = $("#gift-select").val();
+    const quantity = parseInt($('input.qty').val(), 10) || 1;
 
     $btn.prop("disabled", true).text("Adding...");
 
@@ -142,6 +143,7 @@ jQuery(document).ready(function ($) {
         plant_id: plantID,
         planter_id: selectedPlanter.product_id,
         gift_id: giftId || 0,
+        quantity: quantity,
       },
       success: function (response) {
         if (response.success) {
@@ -150,7 +152,7 @@ jQuery(document).ready(function ($) {
             $(".message-added-to-cart").fadeOut();
           }, 3000);
 
-          const qty = giftId ? 3 : 2;
+         const qty = quantity * (giftId ? 3 : 2);
           updateMiniCartQtyIncrementally(qty);
 
           // Cập nhật mini cart bằng tay

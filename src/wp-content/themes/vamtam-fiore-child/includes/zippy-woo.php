@@ -37,28 +37,31 @@ function exclude_category_from_berocket_filter($query)
 }
 
 
-add_action('wp_ajax_add_to_cart_combo', 'handle_add_to_cart_combo');
-add_action('wp_ajax_nopriv_add_to_cart_combo', 'handle_add_to_cart_combo');
-
-function handle_add_to_cart_combo()
+function add_to_cart_combo_ajax_handler()
 {
-    $plant_id = intval($_POST['plant_id']);
-    $planter_id = intval($_POST['planter_id']);
-    $gift_id = isset($_POST['gift_id']) ? intval($_POST['gift_id']) : 0;
+    $plant_id   = absint($_POST['plant_id']);
+    $planter_id = absint($_POST['planter_id']);
+    $gift_id    = absint($_POST['gift_id']);
+    $quantity   = absint($_POST['quantity']);
 
     if (!$plant_id || !$planter_id) {
-        wp_send_json_error('Invalid product selection.');
+        wp_send_json_error('Missing product IDs.');
     }
 
-    WC()->cart->add_to_cart($plant_id);
-    WC()->cart->add_to_cart($planter_id);
+
+    WC()->cart->add_to_cart($plant_id, $quantity);
+
+    WC()->cart->add_to_cart($planter_id, $quantity);
 
     if ($gift_id) {
-        WC()->cart->add_to_cart($gift_id);
+        WC()->cart->add_to_cart($gift_id, $quantity);
     }
 
-    wp_send_json_success('Combo added to cart.');
+    wp_send_json_success();
 }
+add_action('wp_ajax_add_to_cart_combo', 'add_to_cart_combo_ajax_handler');
+add_action('wp_ajax_nopriv_add_to_cart_combo', 'add_to_cart_combo_ajax_handler');
+
 
 
 
@@ -124,6 +127,20 @@ function plant_combo_shortcode($atts)
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
+            </div>
+            <div class="product-gallery-images">
+                <?php
+                $attachment_ids = $product->get_gallery_image_ids();
+                foreach ($attachment_ids as $attachment_id) {
+                    $gallery_img_url = wp_get_attachment_image_url($attachment_id, 'medium_large');
+                    $full_img_url = wp_get_attachment_url($attachment_id);
+                    echo '<div class="stale-images">';
+                    echo '<a data-fancybox="gallery-1" href="' . esc_url($full_img_url) . '">';
+                    echo '<img src="' . esc_url($gallery_img_url) . '" alt="Gallery image">';
+                    echo '</a>';
+                    echo '</div>';
+                }
+                ?>
             </div>
         </div>
 
@@ -201,7 +218,36 @@ function plant_combo_shortcode($atts)
             </div>
             <div class="group-total-add-to-cart">
                 <p>Total: $<span id="combo-total"><?= number_format($plant_price, 2); ?></span></p>
+                <div class="quantity-wrapper">
+                    <?php
+                    woocommerce_quantity_input(array(
+                        'input_name'  => 'quantity',
+                        'input_value' => 1,
+                        'min_value'   => 1,
+                        'max_value'   => $product->get_max_purchase_quantity(),
+                    ), $product);
+                    ?>
+                </div>
+
                 <a href="#" class="button" id="add-to-cart-combo">Add To Cart</a>
+                <?php
+                $product_id = $product->get_id();
+                echo do_shortcode('[woosw id="' . esc_attr($product_id) . ']');
+                ?>
+
+            </div>
+            <div class="line"></div>
+            <div class="description">
+                <?= apply_filters('woocommerce_short_description', $product->get_short_description()); ?>
+                <?php
+                $width = $product->get_width();
+                $height = $product->get_height(); ?>
+                <div class="product-dimensions">
+                    <p>POT SIZE:</p>
+                    <p>~<?= $width ?>cm</p>
+                    <p>HEIGHT:</p>
+                    <p>~<?= $height ?>cm</p>
+                </div>
             </div>
             <div class="line"></div>
             <div class="accordion-wrapper product-information">
@@ -213,47 +259,27 @@ function plant_combo_shortcode($atts)
                 </div>
             </div>
             <div class="line"></div>
-            <?php
-            $width = $product->get_width();
-            $height = $product->get_height(); ?>
-            <div class="product-dimensions">
-                <p><strong>Size:</strong></p>
-                <p>Width: ~<?= $width ?>cm</p>
-                <p>Height: ~<?= $height ?>cm</p>
-            </div>
         </div>
     </div>
-    <div class="product-gallery-images">
-        <?php
-        $attachment_ids = $product->get_gallery_image_ids();
-        foreach ($attachment_ids as $attachment_id) {
-            $gallery_img_url = wp_get_attachment_image_url($attachment_id, 'medium_large');
-            $full_img_url = wp_get_attachment_url($attachment_id);
-            echo '<div class="stale-images">';
-            echo '<a data-fancybox="gallery-1" href="' . esc_url($full_img_url) . '">';
-            echo '<img src="' . esc_url($gallery_img_url) . '" alt="Gallery image">';
-            echo '</a>';
-            echo '</div>';
-        }
-        ?>
-    </div>
+
 <?php
     return ob_get_clean();
 }
 
 
-function exclude_workshop_products_from_archive( $query ) {
-    if ( ! is_admin() && $query->is_main_query() && ( is_shop() || is_product_category() || is_product_tag() || is_search() ) ) {
-        $tax_query = (array) $query->get( 'tax_query' );
+function exclude_workshop_products_from_archive($query)
+{
+    if (! is_admin() && $query->is_main_query() && (is_shop() || is_product_category() || is_product_tag() || is_search())) {
+        $tax_query = (array) $query->get('tax_query');
 
         $tax_query[] = array(
             'taxonomy' => 'product_cat',
             'field'    => 'slug',
-            'terms'    => array( 'workshop' ),
+            'terms'    => array('workshop'),
             'operator' => 'NOT IN',
         );
 
-        $query->set( 'tax_query', $tax_query );
+        $query->set('tax_query', $tax_query);
     }
 }
-add_action( 'pre_get_posts', 'exclude_workshop_products_from_archive' );
+add_action('pre_get_posts', 'exclude_workshop_products_from_archive');
