@@ -155,7 +155,6 @@ jQuery(document).ready(function ($) {
          const qty = quantity * (giftId ? 3 : 2);
           updateMiniCartQtyIncrementally(qty);
 
-          // Cập nhật mini cart bằng tay
           $.post("/?wc-ajax=get_refreshed_fragments", function (data) {
             if (data && data.fragments) {
               $.each(data.fragments, function (key, value) {
