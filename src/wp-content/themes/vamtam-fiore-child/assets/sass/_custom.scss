@@ -472,3 +472,43 @@ $breakpoint-mobile: 767px;
 .woocommerce-shipping-methods {
   margin-bottom: 20px !important;
 }
+.elementor-wc-products ul.products li.product {
+  position: relative;
+
+  &:hover {
+    .woolentor-quickview-btn-area {
+      display: block;
+      animation: slideUp 0.3s ease-out forwards;
+    }
+  }
+
+  .woolentor-quickview-btn-area {
+    text-align: center;
+    padding: 8px 15px;
+    border: 1px solid;
+    margin: 0px 15px;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 40%;
+    z-index: 99;
+    width: 90%;
+    background: white;
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    &:hover {
+      background: #6a6e49;
+      border: 1px solid #6a6e49;
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
