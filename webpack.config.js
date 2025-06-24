@@ -32,6 +32,9 @@ module.exports = [
       filename: destOutput + "/js/[name].min.js",
       path: path.resolve(__dirname),
     },
+    resolve: {
+      modules: [path.resolve(__dirname, "node_modules"), "node_modules"],
+    },
     module: {
       rules: [
         // js babelization
@@ -55,6 +58,7 @@ module.exports = [
                 sourceMap: true,
                 sassOptions: {
                   outputStyle: "compressed",
+                  includePaths: [path.resolve(__dirname, "node_modules")],
                 },
                 additionalData: `@import "${destChildTheme}/assets/sass/_mixins";`,
               },

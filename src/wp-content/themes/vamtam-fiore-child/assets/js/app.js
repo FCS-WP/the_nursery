@@ -1,6 +1,7 @@
 import { ajax } from "jquery";
 import "../lib/slick/slick.js";
-import "../lib/fancybox/jquery.fancybox.min.js";
+import { Fancybox } from "@fancyapps/ui";
+import flatpickr from "flatpickr";
 
 document.addEventListener("DOMContentLoaded", function () {
   const banners = document.querySelectorAll(".custom-title-baner-home");
@@ -14,6 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   showNextBanner();
   setInterval(showNextBanner, 4000);
+});
+
+Fancybox.bind('[data-fancybox="gallery"]', {
+  Thumbs: {
+    autoStart: false,
+  },
+  infinite: true,
 });
 
 jQuery(document).ready(function ($) {
@@ -104,6 +112,7 @@ jQuery(document).ready(function ($) {
     $select.find("option").removeClass("selected");
     $select.find("option:selected").addClass("selected");
   }
+
   $(".accordion-header").on("click", function () {
     var $header = $(this);
     var $content = $header.next(".accordion-content");
@@ -131,7 +140,7 @@ jQuery(document).ready(function ($) {
 
     const $btn = $(this);
     const giftId = $("#gift-select").val();
-    const quantity = parseInt($('input.qty').val(), 10) || 1;
+    const quantity = parseInt($("input.qty").val(), 10) || 1;
 
     $btn.prop("disabled", true).text("Adding...");
 
@@ -152,7 +161,7 @@ jQuery(document).ready(function ($) {
             $(".message-added-to-cart").fadeOut();
           }, 3000);
 
-         const qty = quantity * (giftId ? 3 : 2);
+          const qty = quantity * (giftId ? 3 : 2);
           updateMiniCartQtyIncrementally(qty);
 
           $.post("/?wc-ajax=get_refreshed_fragments", function (data) {

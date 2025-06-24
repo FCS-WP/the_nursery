@@ -164,15 +164,19 @@ $breakpoint-mobile: 767px;
       font-weight: 400;
       text-transform: capitalize;
     }
+
     .product-price {
       font-size: 24px;
       margin-bottom: 40px;
     }
+
     .product-dimensions {
       margin-top: 20px;
     }
+
     .product-information {
       padding: 10px 0;
+
       .accordion-header {
         padding: 10px 0;
         padding-right: 10px;
@@ -180,40 +184,49 @@ $breakpoint-mobile: 767px;
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
+
         span {
           font-size: 14px;
           font-weight: 600;
         }
+
         .accordion-icon {
           font-weight: 100;
           color: #ced0bb;
+
           &.minus {
             font-size: 70px;
             margin-bottom: 15px;
           }
+
           &.plus {
             font-size: 50px;
           }
         }
       }
     }
+
     .show-more {
       padding: 10px;
     }
   }
+
   .choose-planter,
   .choose-gift {
     select {
       margin-top: 10px;
     }
+
     margin: 20px 0;
   }
+
   .group-total-add-to-cart {
     p {
       font-size: 24px;
       margin-bottom: 0;
     }
   }
+
   .current-plant-image {
     img {
       height: 300px;
@@ -229,9 +242,11 @@ $breakpoint-mobile: 767px;
       width: 100%;
     }
   }
+
   .combo-item.hidden {
     display: none;
   }
+
   .show-more {
     margin: 20px 0;
   }
@@ -260,22 +275,26 @@ $breakpoint-mobile: 767px;
     }
   }
 }
+
 .tab-faq {
   .elementor-tabs-wrapper {
     .elementor-tab-title {
       margin: 10px !important;
+
       &.elementor-active {
-        background-color: #6a6e49 !important ;
+        background-color: #6a6e49 !important;
         border-inline-end-style: solid !important;
         color: white !important;
         border: 1px solid #6a6e49 !important;
       }
     }
   }
+
   .elementor-tabs-content-wrapper {
     .elementor-tab-content {
       padding: 0 2rem !important;
     }
+
     .elementor-toggle {
       .elementor-toggle-item {
         .elementor-tab-title {
@@ -283,6 +302,7 @@ $breakpoint-mobile: 767px;
           border: 0 !important;
           text-align: start;
         }
+
         .elementor-tab-content {
           padding: 20px !important;
         }
@@ -290,6 +310,7 @@ $breakpoint-mobile: 767px;
     }
   }
 }
+
 .our-clients {
   .elementor-image-carousel {
     .swiper-slide {
@@ -298,10 +319,12 @@ $breakpoint-mobile: 767px;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
+
         img {
           height: 450px;
           width: 450px;
           object-fit: contain;
+
           @media (max-width: $breakpoint-tablet) {
             height: auto;
           }
@@ -310,6 +333,7 @@ $breakpoint-mobile: 767px;
             height: auto;
           }
         }
+
         .elementor-image-carousel-caption {
           margin: 10px 0 !important;
         }
@@ -317,6 +341,7 @@ $breakpoint-mobile: 767px;
     }
   }
 }
+
 .message-added-to-cart {
   p {
     padding: 5px 10px;
@@ -324,6 +349,7 @@ $breakpoint-mobile: 767px;
     background: #6a6e49;
   }
 }
+
 .planter-thumbnails {
   margin-top: 10px;
 }
@@ -339,17 +365,21 @@ $breakpoint-mobile: 767px;
   border: 2px solid #000;
   padding: 0;
 }
+
 .product-gallery-images {
   display: flex;
   flex-wrap: wrap;
   margin-top: 30px;
+
   .stale-images {
     width: 50%;
+
     img {
       padding: 10px;
     }
   }
 }
+
 #planter-select,
 #gift-select {
   width: 100%;
@@ -365,25 +395,30 @@ $breakpoint-mobile: 767px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='m5.52 6.05 4.55-4.56a.56.56 0 0 0 0-.8L9.54.17a.56.56 0 0 0-.8 0L5.12 3.77 1.49.17a.56.56 0 0 0-.8 0L.17.7a.56.56 0 0 0 0 .8l4.56 4.55c.22.22.58.22.8 0Z' fill='%236A6A6A' fill-rule='nonzero'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
+
   &:focus {
     outline: none;
     box-shadow: none;
     border-color: #aaa;
   }
 }
+
 #add-to-cart-combo {
   // width: 60%;
   text-align: center;
 }
+
 .message-added-to-cart {
   margin: 10px 0;
 }
+
 .line {
   width: 100%;
   height: 1px;
   background-color: #ced0bb;
   margin: 10px 0;
 }
+
 .woosw-btn {
   width: 50px;
   height: 50px;
@@ -396,6 +431,7 @@ $breakpoint-mobile: 767px;
   align-items: center;
   flex-shrink: 1;
   flex-basis: auto !important;
+
   &::before {
     display: inline-block;
     vertical-align: middle;
@@ -404,18 +440,21 @@ $breakpoint-mobile: 767px;
     margin-right: 0;
     font-weight: normal;
   }
+
   &.woosw-added {
     &::before {
       content: "\e913";
     }
   }
+
   &:hover {
     color: #000 !important;
   }
 }
-.quantity-wrapper{
-  .quantity{
-    .input-text.qty{
+
+.quantity-wrapper {
+  .quantity {
+    .input-text.qty {
       max-width: 100px;
       min-width: 70px;
       outline: none;
@@ -423,4 +462,13 @@ $breakpoint-mobile: 767px;
       margin-right: 10px;
     }
   }
+}
+
+.fancybox__container {
+  button {
+    padding: 0 !important;
+  }
+}
+.woocommerce-shipping-methods {
+  margin-bottom: 20px !important;
 }
